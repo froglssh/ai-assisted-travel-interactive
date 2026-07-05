@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI輔助自助旅行</title>
+<style>
+:root{
+  --bg:#f4f5f7; --panel:#ffffff; --text:#1a1a1a; --sub:#4a4a4a;
+  --accent:#2563eb; --accent2:#1d4ed8; --border:#e2e5ea; --shadow:rgba(0,0,0,.10);
+  --barbg:#ffffff; --thumbbg:#eceef2; --thumbactive:#2563eb;
+}
+html[data-theme="dark"]{
+  --bg:#0d0f14; --panel:#161a22; --text:#f3f4f6; --sub:#c2c7d0;
+  --accent:#60a5fa; --accent2:#3b82f6; --border:#2a2f3a; --shadow:rgba(0,0,0,.5);
+  --barbg:#12151c; --thumbbg:#1f2430; --thumbactive:#60a5fa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;
+  background:var(--bg); color:var(--text);
+  height:100vh; display:flex; flex-direction:column; overflow:hidden;
+  transition:background .3s,color .3s;
+}
+/* ---- Top bar ---- */
+header{
+  display:flex; align-items:center; gap:14px; padding:12px 20px;
+  background:var(--barbg); border-bottom:1px solid var(--border);
+  box-shadow:0 2px 10px var(--shadow); z-index:20; flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.logo{
+  width:40px;height:40px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+h1{font-size:22px;font-weight:800;letter-spacing:.5px;line-height:1.1}
+.subttl{font-size:12px;color:var(--sub);font-weight:500}
+.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.btn{
+  border:1px solid var(--border); background:var(--panel); color:var(--text);
+  padding:9px 15px; border-radius:10px; font-size:14px; font-weight:600;
+  cursor:pointer; display:inline-flex; align-items:center; gap:7px;
+  transition:transform .12s,background .2s,border-color .2s;
+}
+.btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.sec-input{
+  display:flex;align-items:center;gap:6px;font-size:13px;color:var(--sub);
+  background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:6px 11px;
+}
+.sec-input input{
+  width:52px;border:none;background:transparent;color:var(--text);
+  font-size:15px;font-weight:700;text-align:center;outline:none;
+}
+.chk{
+  display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--sub);
+  background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:7px 12px;cursor:pointer;user-select:none;
+}
+.chk input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+.sec-input select{
+  border:none;background:transparent;color:var(--text);
+  font-size:13px;font-weight:700;outline:none;cursor:pointer;max-width:170px;
+}
+.sec-input select option{color:#111}
+/* ---- Main split ---- */
+main{flex:1;display:flex;min-height:0;position:relative}
+.slide-pane{
+  flex:0 0 66%; max-width:66%; background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  padding:26px; position:relative; overflow:hidden;
+}
+.slide-pane img{
+  max-width:100%;max-height:100%;object-fit:contain;
+  border-radius:12px; box-shadow:0 10px 34px var(--shadow);
+  background:#fff;
+}
+.text-pane{
+  flex:1; min-width:0; background:var(--panel); border-left:1px solid var(--border);
+  padding:24px 26px; overflow-y:auto; display:flex;flex-direction:column;
+}
+.pagechip{
+  align-self:flex-start; font-size:12px; font-weight:700; color:#fff;
+  background:var(--accent); padding:3px 12px; border-radius:20px; margin-bottom:12px;
+}
+.text-pane h2{
+  font-size:22px; font-weight:800; line-height:1.3; margin-bottom:14px;
+  color:var(--text); border-bottom:3px solid var(--accent); padding-bottom:11px;
+}
+.text-pane p{
+  font-size:16px; line-height:1.7; color:var(--sub); margin-bottom:13px;
+  letter-spacing:.2px;
+}
+.text-pane p:last-child{margin-bottom:0}
+/* Nav arrows over slide */
+.nav-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:48px;height:48px;border-radius:50%;border:none; cursor:pointer;
+  background:rgba(37,99,235,.85); color:#fff; font-size:24px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.3); transition:background .2s,transform .12s; z-index:6;
+}
+.nav-arrow:hover{background:var(--accent2);transform:translateY(-50%) scale(1.08)}
+.nav-arrow.prev{left:16px}
+.nav-arrow.next{right:16px}
+/* ---- Thumbnail strip ---- */
+.filmstrip{
+  background:var(--barbg); border-top:1px solid var(--border);
+  padding:9px 12px; display:flex; align-items:center; gap:10px; z-index:15;
+}
+.strip-scroll{
+  display:flex; gap:8px; overflow-x:auto; overflow-y:hidden; padding:3px 2px 7px;
+  scroll-behavior:smooth; flex:1;
+}
+.strip-scroll::-webkit-scrollbar{height:8px}
+.strip-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.thumb{
+  flex:none; width:118px; height:67px; border-radius:7px; cursor:pointer;
+  border:3px solid transparent; background:var(--thumbbg); position:relative;
+  overflow:hidden; transition:border-color .15s,transform .12s;
+}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb:hover{transform:translateY(-2px)}
+.thumb.active{border-color:var(--thumbactive)}
+.thumb .tn{
+  position:absolute;left:0;bottom:0;background:rgba(0,0,0,.62);color:#fff;
+  font-size:11px;font-weight:700;padding:1px 6px;border-top-right-radius:6px;
+}
+.jump{
+  display:flex;align-items:center;gap:7px;font-size:13px;color:var(--sub);flex:none;
+}
+.jump input{
+  width:56px;padding:6px;border-radius:8px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);text-align:center;font-size:14px;font-weight:700;
+}
+/* ---- Fullscreen presentation ---- */
+#fs{
+  position:fixed;inset:0;background:#000;z-index:100;display:none;
+  align-items:center;justify-content:center;
+}
+#fs.show{display:flex}
+#fs img{max-width:100%;max-height:100%;object-fit:contain}
+.fs-ui{
+  position:fixed;top:18px;right:18px;display:flex;gap:10px;align-items:center;
+  z-index:110; opacity:.25; transition:opacity .25s;
+}
+#fs:hover .fs-ui{opacity:1}
+.fs-btn{
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;
+  padding:9px 14px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;
+  backdrop-filter:blur(6px);
+}
+.fs-btn:hover{background:rgba(255,255,255,.28)}
+.fs-count{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  color:#fff;background:rgba(0,0,0,.5);padding:6px 18px;border-radius:20px;
+  font-size:15px;font-weight:700;z-index:110;opacity:.3;transition:opacity .25s;
+}
+#fs:hover .fs-count{opacity:1}
+.fs-arrow{
+  position:fixed;top:50%;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;
+  font-size:28px;cursor:pointer;z-index:110;opacity:.2;transition:opacity .25s;
+  display:flex;align-items:center;justify-content:center;
+}
+#fs:hover .fs-arrow{opacity:.85}
+.fs-arrow.p{left:22px}.fs-arrow.n{right:22px}
+/* ---- Footer ---- */
+footer{
+  background:var(--barbg);border-top:1px solid var(--border);
+  text-align:center;padding:8px;font-size:13px;color:var(--sub);font-weight:600;letter-spacing:.5px;
+}
+footer b{color:var(--accent);font-weight:800}
+/* ---- Responsive ---- */
+@media(max-width:860px){
+  main{flex-direction:column}
+  .slide-pane{flex:0 0 52%;max-width:100%;padding:14px}
+  .text-pane{border-left:none;border-top:1px solid var(--border);padding:16px}
+  .text-pane h2{font-size:19px}
+  .text-pane p{font-size:15px;line-height:1.65}
+  h1{font-size:18px}
+  .thumb{width:92px;height:52px}
+}
+.playing-badge{
+  position:absolute;top:16px;left:16px;background:rgba(37,99,235,.9);color:#fff;
+  padding:5px 13px;border-radius:20px;font-size:13px;font-weight:700;z-index:6;display:none;
+}
+.playing-badge.show{display:block}
+</style>
+</head>
+<body data-theme="light">
+<header>
+  <div class="brand">
+    <div class="logo">✈️</div>
+    <div>
+      <h1>AI輔助自助旅行</h1>
+      <div class="subttl">研習教學簡報 · 圖文對照瀏覽</div>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="sec-input" title="設定自動播放秒數">
+      <span>秒數</span><input id="secIn" type="number" min="1" max="120" value="8"><span>秒</span>
+    </div>
+    <button class="btn" id="autoBtn">▶ 自動播放</button>
+    <label class="chk" title="開啟後，自動播放會唸完整頁旁白才換頁；關閉則依上方秒數換頁">
+      <input type="checkbox" id="waitSpeak" checked> 朗讀完才換頁
+    </label>
+    <div class="sec-input" title="選擇朗讀語音（清單依你電腦已安裝的語音而定，建議挑「Google」或加強版語音最自然）">
+      <span>語音</span><select id="voiceSel"></select>
+    </div>
+    <div class="sec-input" title="設定朗讀語速">
+      <span>語速</span><input id="rateIn" type="number" min="0.5" max="2" step="0.05" value="0.95"><span>×</span>
+    </div>
+    <div class="sec-input" title="設定音調高低（1 為原音，低一點較沉穩、高一點較活潑）">
+      <span>音調</span><input id="pitchIn" type="number" min="0.5" max="1.5" step="0.05" value="1.0"><span>♪</span>
+    </div>
+    <button class="btn" id="speakBtn">🔊 朗讀旁白</button>
+    <button class="btn primary" id="fsBtn">⛶ 全螢幕播放</button>
+    <button class="btn" id="themeBtn">🌙 深色</button>
+  </div>
+</header>
+
+<main>
+  <section class="slide-pane">
+    <div class="playing-badge" id="badge">自動播放中…</div>
+    <button class="nav-arrow prev" id="prev">‹</button>
+    <img id="mainImg" src="" alt="投影片">
+    <button class="nav-arrow next" id="next">›</button>
+  </section>
+  <section class="text-pane" id="textPane">
+    <span class="pagechip" id="chip">第 1 / 70 頁</span>
+    <h2 id="title"></h2>
+    <div id="body"></div>
+  </section>
+</main>
+
+<div class="filmstrip">
+  <div class="jump">
+    <span>跳頁</span>
+    <input id="jumpIn" type="number" min="1" max="70" value="1">
+    <span>/ 70</span>
+  </div>
+  <div class="strip-scroll" id="strip"></div>
+</div>
+
+<footer>臺北市立麗山高中 &nbsp;·&nbsp; <b>林獻升老師</b></footer>
+
+<!-- Fullscreen -->
+<div id="fs">
+  <button class="fs-arrow p" id="fsPrev">‹</button>
+  <img id="fsImg" src="" alt="">
+  <button class="fs-arrow n" id="fsNext">›</button>
+  <div class="fs-ui">
+    <button class="fs-btn" id="fsSpeak">🔊 朗讀旁白</button>
+    <button class="fs-btn" id="fsAuto">▶ 自動播放</button>
+    <button class="fs-btn" id="fsExit">✕ 離開全螢幕</button>
+  </div>
+  <div class="fs-count" id="fsCount"></div>
+</div>
+
+<script>
+const SLIDES = [{"n": 1, "title": "AI 輔助自助旅行：從規劃到記錄的數位工具全解析", "paras": ["各位老師、各位夥伴，大家好，我是麗山高中生物科的林獻升。今天這場研習，我想跟大家聊的是「AI 輔助自助旅行」，從最前面的行程規劃，一路走到旅行後的筆記記錄。", "這份講義，是我把這一年來自己混用 ChatGPT、Gemini 這些工具、實際安排旅行的心得整理出來的。與其說是一份工具導覽，我更希望它像一次陪大家一起動手做的過程。"]}, {"n": 2, "title": "研習講義使用與導覽說明", "paras": ["開始之前，先花一分鐘說明這份講義怎麼看、怎麼用。", "我把整份簡報分成三大部分：先建立觀念，再一個一個帶大家認識工具，最後用一趟完整的行程做實戰示範。裡面我還嵌了很多可以一鍵複製的提示詞卡片，甚至有現成的小程式碼，就是希望你聽完之後，回家真的用得上，慢慢養成自己調度這些工具的手感。"]}, {"n": 3, "title": "前言：為什麼要談 AI 輔助自助旅行", "paras": ["我們為什麼要花一整場研習，來談 AI 輔助自助旅行？其實是因為旅行規劃這件事，這幾年真的變了。", "以前我們靠一本本旅遊書，現在生成式 AI 幾句話就能給你一份草稿。但我想先講清楚，AI 很強，卻絕對不是萬能——AI、傳統 App、還有我們人，這三方是各司其職的。順帶一提，你手上這份報告本身，就是一次「AI 幫忙、人來收斂」的實作示範。"]}, {"n": 4, "title": "傳統自助旅行規劃的痛點", "paras": ["先想想，自己過去排一趟自助行，最卡的是什麼？對我來說，是三件事。", "第一是資訊超載，光是比對交通跟景點，就開了幾十個網頁。第二是變動太多，預算、天氣、體力、時間全都牽在一起，動一個就得重排。第三是語言，日文的官方公告看不懂，到了現場又不知道怎麼開口。這三個痛點，正好就是後面 AI 能幫上忙的地方。"]}, {"n": 5, "title": "第一部：建立觀念 — 六個環節與混合式工具箱", "paras": ["我們先進到第一部分，建立觀念。", "這一段我不急著教工具，而是想先把幾個底層的想法講清楚：旅行規劃到底怎麼變的、生成式 AI 跟代理型 AI 差在哪、自助旅行可以拆成哪六個環節，還有最重要的——發散、收斂跟驗證這套心法。這些觀念站穩了，後面的工具你才知道什麼時候該用哪一個。"]}, {"n": 6, "title": "數位化旅行的最新趨勢數據", "paras": ["先給大家看兩個數字，感受一下這股趨勢。", "根據 Phocuswright 二○二六年的追蹤，已經有超過五成五的旅客，在旅程中用過 AI；而且超過八成的人回報，AI 真的讓他們的旅行體驗變好了。這背後其實是「體驗經濟」在興起——現在的旅客要的，不只是走馬看花，而是玩得深、玩得剛剛好。"]}, {"n": 7, "title": "生成式 AI 與代理型 AI 的本質區別", "paras": ["這裡要先把兩個名詞分清楚，因為它們常被混在一起。", "生成式 AI 比較像「顧問」，你問它「東京十天怎麼玩」，它很會回答、很會生文字。代理型 AI 則像「助理」，它會真的動手——把任務拆成步驟，去串接地圖、機票這些外部工具，一步步幫你執行。一個負責出點子，一個負責做事，這個差別後面會一直用到。"]}, {"n": 8, "title": "什麼是代理洗綠 (Agentwashing)？", "paras": ["不過市面上有個現象，我要提醒大家小心，叫做「代理洗綠」。", "意思是，有些其實只是照本宣科的聊天機器人，卻被包裝成很厲害的「AI 代理」來行銷。真正的代理是有標準的：能自己拆解任務、遇到錯誤會自我修正、還能非線性地連續執行。所以下次看到號稱「AI 代理」的產品，不妨問一句——它是真的會動手，還是只會動嘴？"]}, {"n": 9, "title": "自助旅行的六個環節架構", "paras": ["要讓 AI 幫上忙，我習慣先把一趟旅行拆開來看。", "我把它分成六個環節：前期規劃、資訊蒐集、行程設計，接著是語言翻譯、即時導航，最後是行中的調整與紀錄。要特別說的是，這不是一條死板的單行道；實際上它是一個不斷來回的循環，你隨時可能因為一個新資訊，又跳回去重排。"]}, {"n": 10, "title": "環節 ① · 前期規劃 (Pre-planning)", "paras": ["第一個環節，前期規劃。", "這一步要決定的，是最根本的東西：去哪裡、玩幾天、預算上限多少、跟誰去、這趟想玩什麼主題。AI 在這裡扮演的是「大腦」的角色——它最擅長的，就是把你心裡那個模糊的渴望，比如「我想去日本玩」，慢慢轉成一個具體、又能往下執行的初步框架。"]}, {"n": 11, "title": "環節 ② · 資訊蒐集 (Information Gathering)", "paras": ["第二個環節是資訊蒐集，也是最花時間的一段。", "你要深入去挖景點細節、住宿評價、交通票券，還有那些藏在官網裡的規定。這時 AI 的價值，是幫你跨好幾個來源把網頁整理起來、把落落長的文件摘要成重點，甚至幫你建一個專屬的知識庫，讓資料不再散得到處都是。"]}, {"n": 12, "title": "環節 ③ · 行程設計 (Itinerary Design)", "paras": ["第三個環節，行程設計。", "前面蒐集到的資訊還很零散，這一步就是要把它們組織成一天一天的具體日程，還得算動線、把時間排到最順。AI 能幫你細化時程、依地理位置排出順路的動線，甚至一鍵把行程轉成心智圖或資訊圖表，讓整趟的骨架一眼就看得清楚。"]}, {"n": 13, "title": "環節 ④ · 語言翻譯 (Language Translation)", "paras": ["第四個環節，語言翻譯，這是很多人到現場最緊張的一關。", "外文菜單、路上的標示、車站的公告，還有臨時要跟人溝通，全都卡在語言。現在 AI 可以做即時的雙向口譯，用相機鏡頭對著就能視覺翻譯，也能把整個日文網頁變成雙語對照讓你邊看邊讀。語言這道牆，其實已經比我們想像的矮很多了。"]}, {"n": 14, "title": "環節 ⑤ · 即時導航 (Real-time Navigation)", "paras": ["第五個環節是即時導航，也就是人已經到了當地之後的事。", "找路、查下一班車幾點、看看等一下會不會下雨，這些都是現場最實在的需求。AI 在這裡能結合相機跟語音，直接幫你查眼前的環境，也能即時分析天氣的動態變化，讓你不用一直低頭滑手機，也知道下一步該怎麼走。"]}, {"n": 15, "title": "環節 ⑥ · 行中調整與紀錄 (In-trip Adjustment & Recording)", "paras": ["第六個環節，是行中的調整與紀錄，這一段最考驗臨場反應。", "班機延誤了、突然下大雨，行程就得重排；同時你還想把沿路的見聞跟花費記下來。AI 可以幫你臨時重排當天的日程，把收據發票用 OCR 認出來，甚至把一天的點滴自動生成一篇遊記草稿。旅行的當下，它就像一個隨行的小秘書。"]}, {"n": 16, "title": "自助旅行規劃的黃金鐵三角", "paras": ["六個環節講完，我想收束成一個我很在意的觀念——規劃的黃金鐵三角。", "簡單講，AI 負責「發散」，天馬行空幫你想、幫你搭骨架、幫你整理多國語言的資料。傳統 App 負責「收斂」，像乘換案內查班次、Tabelog 看評分，把每個細節精準落地。而「驗證」這一角，永遠是我們人自己來——最後的核對、要不要冒這個險、要不要按下付款，都得由人決定。"]}, {"n": 17, "title": "核心心法：信任，但要查證 (Trust but Verify)", "paras": ["承接上一頁，這裡就要講整場研習我最想送給大家的一句話：信任，但要查證。", "我常把 AI 形容成一個「才華洋溢、但偶爾會說謊的實習生」。它可能很有自信地推薦你一家餐廳，結果那家早就收了；或給你一個根本不對的營業時間。所以我們要當的是「指揮官」，是那個調度數位資源的人，而不是盲目跟著工具走的執行者。"]}, {"n": 18, "title": "提問的三個漸進層次", "paras": ["觀念的最後一塊，是提問。因為你問得對不對，直接決定 AI 給你的答案好不好。", "我把提問分成三個層次，一層比一層深。第一層，是用限制條件當起手式，我等一下會介紹 R-C-F-O-T 這個框架。第二層，是反過來讓 AI 面試你。第三層，則是像蘇格拉底那樣不斷追問、反覆磨合。"]}, {"n": 19, "title": "第一層提問：R-C-F-O-T 結構化框架", "paras": ["先看第一層，限制條件起手式，我用 R-C-F-O-T 五個字母來記。", "R 是角色，你先讓 AI 當一個「東京在地的專業導遊」。C 是情境，交代清楚成員是兩大兩小、七月的夏天、幾天幾晚、預算多少。F 是格式，要求它分主題排行程、還要標出哪些得另外查證。O 是目標，先產出一個初步骨架就好。T 是語氣，請它像個在地朋友，把重點講清楚。這五件事講齊了，答案的品質就差很多。"]}, {"n": 20, "title": "第二層提問：引導 AI 反向詢問偏好", "paras": ["第二層，我覺得是最有意思的一招——讓 AI 反過來面試你。", "訣竅是，別急著要行程，先請它提出八到十個關鍵問題來問你。為什麼要這樣？因為它會逼出你自己都沒意識到的隱性需求：你的體力極限、習慣幾點起床、對什麼食物過敏、能忍受排多久的隊。這其實就是最漂亮的「人機協同」，人跟機器一來一往，答案才會真正貼近你。"]}, {"n": 21, "title": "第三層提問：蘇格拉底式追問磨行程", "paras": ["第三層，是蘇格拉底式的追問。", "做法就是對 AI 的初稿一直質疑、一直追問。比如問它「為什麼這個順序比較順？」、「從 A 景點到 B 景點地鐵要轉幾次、有沒有不用換車的路線？」。這樣一路追下去，等於逼它把推理的邏輯攤開來，順便補上初稿的漏洞。到最後，那份行程已經不是它單方面給的，而是你們一起改出來的。"]}, {"n": 22, "title": "第二部：工具巡禮 — 各式 AI 程式與實際應用", "paras": ["觀念的部分先到這裡，接下來進到第二部分，工具巡禮。", "這一段會比較熱鬧，我會一個一個帶大家看：三大語言模型怎麼比、AI 視覺跟深度研究怎麼用、怎麼把行程變成心智圖或一張海報，還有知識庫、自訂助理，以及很重要的 AI Agent 專章，最後是翻譯跟傳統 App 的工具箱。工具很多，但別擔心，我會告訴你各自最適合的場合。"]}, {"n": 23, "title": "生成式 LLM 三大主流模型", "paras": ["先從最核心的三大語言模型講起。", "ChatGPT 的對話最流暢、生態最完整，看圖說故事的多模態能力也很強。Gemini 的強項在地理資訊，跟即時地圖串得很緊，又整合了 Google 的整套工具。Claude 則特別會讀長文，邏輯條理清楚，你要它幫你消化一份幾十頁的攻略 PDF，它很拿手。三個各有個性，沒有誰全面勝出。"]}, {"n": 24, "title": "三大模型在旅行中的最佳分工", "paras": ["知道了個性，就能談分工，這也是我實際在用的方式。", "規劃的第一線、要創意、要情境問答、要用相機互動，我會找 ChatGPT。需要確認精確的地理位置、排路線、查景點，我會交給 Gemini。行前如果我手上有幾十萬字的攻略包要比對、要去蕪存菁，那就是 Claude 的主場。同一趟旅行，不同階段換不同的工具，效率會高很多。"]}, {"n": 25, "title": "提示詞卡片：限制條件起手式 (R-C-F-O-T)", "paras": ["講完觀念，我們來看第一張可以直接複製的提示詞卡片。", "這張卡走的就是前面 R-C-F-O-T 的起手式，ChatGPT、Gemini、Claude 都通用。裡面我把目的地、天數、成員、主題、預算都設成變數，你換上自己的就能用。特別提醒一點：卡片的結尾，一定要要求 AI 把「待查證事項」還有天候、簽證這類限制標出來，這一步是防幻覺的關鍵。"]}, {"n": 26, "title": "AI 多模態視覺互動的應用", "paras": ["接著看一個很有臨場感的用法——讓 AI 用眼睛幫你。", "像 ChatGPT 的視覺、Copilot、Gemini Live、Chrome 的 AI 都做得到。想像你站在澀谷街頭，對著一棟建築拍照問「這是哪裡？」，Gemini Live 就能即時用語音幫你導覽。路牌、日文公告、餐廳的紙本菜單，拍下去馬上翻。等於是把手機鏡頭變成 AI 的眼睛，真正做到邊走邊問。"]}, {"n": 27, "title": "AI 搜尋與傳統搜尋的本質差異", "paras": ["再來談搜尋，因為 AI 搜尋跟我們習慣的 Google，本質上不一樣。", "傳統 Google 給你的是一堆連結，點開、過濾、整理，還是你自己的事。AI 搜尋則是直接幫你把幾十個網頁讀完，吐出一份整理好的答案，而且會清楚標註資料來源。這個「附出處」的特性我特別看重，因為它正好是我們查證、防幻覺最好用的武器。"]}, {"n": 28, "title": "Arc Search、Perplexity 與 Felo Search", "paras": ["AI 搜尋工具裡，我常用的有三個，各有各的脾氣。", "Arc Search 是手機專屬，按一下 Browse for me，它就幫你讀十幾個網頁，很快把目的地的輪廓建起來。Perplexity 擅長把問題結構化拆解，生出精確的表格行程，而且每一句話都能追溯來源。Felo Search 則是網路加檔案雙搜，支援三十幾種語言，要跨語言查日文的觀光資訊，它最方便。"]}, {"n": 29, "title": "什麼是深度研究 (Deep Research)？", "paras": ["接下來這個功能，我覺得是這一兩年最讓人驚豔的——深度研究。", "它不是快問快答，而是派一個 AI 研究員，替你埋頭研究個十五到三十分鐘。這段時間裡，它會自己想搜尋關鍵字、自己點開幾十個網頁，遇到資訊互相矛盾，還會回頭反覆驗證。最後產出的，是一份結構嚴密、動輒數千字、而且每一段都附上來源網址的長報告。"]}, {"n": 30, "title": "四大平台 Deep Research 成果特色", "paras": ["同樣是深度研究，四個平台的成果其實風格各異。", "OpenAI 的條列最細膩，資料的標註也最嚴格、最多維。Gemini 像在幫你寫一本終極旅遊指南，還會自動加上穿搭跟氣候分析。Perplexity 強在宏觀的結構跟表格排版，一眼就看得懂。Felo 則勝在跨語言，能把日本官網的日文報告，無縫融成一份通順的繁體中文。你可以依自己的重點來選。"]}, {"n": 31, "title": "提示詞卡片：深度研究模式", "paras": ["這裡再給大家一張深度研究專用的提示詞卡片。", "它適用在 OpenAI 跟 Gemini 的深度研究模式。內容我要求它涵蓋幾件事：分區怎麼玩、夏季的氣候該怎麼穿、幫我避開太觀光的點給出替代方案、還有各種票券的比較。最後一樣有個小堅持——請它在報告的最開頭，就放一份「待人為查證清單」，提醒自己哪些還得再確認。"]}, {"n": 32, "title": "世界旅遊基準測試 (WorldTravel Benchmark)", "paras": ["不過，我也要很誠實地講深度研究的侷限，這一頁請大家記牢。", "有個叫 WorldTravel 的基準測試，結論是：就算是最頂尖的 LLM 代理，真要把行程落地執行，成功率其實還是偏低。最容易出包的，就是那種要點網頁預訂、時效性很強的票價、還有臨時變動的營業時間。所以結論很清楚：深度研究給你的，是一份「高品質的初稿」，絕對不是「不必查證的定稿」。"]}, {"n": 33, "title": "行程大綱視覺化與動態決策", "paras": ["進到視覺化的部分，先講怎麼把行程變成一張心智圖。", "像 Mapify、Xmind AI、Albus AI 都能做。原理是把 Day 1 到 Day 2 這種一條線的文字行程，攤成一張放射狀的圖。好處在哪？純文字行程容易讓人硬著頭皮照走；心智圖卻能讓你一眼看清哪些點是鄰近的。萬一遇到臨時閉館或下雨，你看著圖就能秒換備案，又不會打亂整體動線。"]}, {"n": 34, "title": "提示詞卡片：輸出 Markdown 匯入心智圖", "paras": ["要讓 AI 生的行程能匯進心智圖，中間有個小技巧，我做成了這張卡片。", "做法是引導 LLM，把你們討論定案的行程，格式化成標準的 Markdown 樹狀結構。用井字號代表第一層，也就是天數；用短橫線代表第二層，像上午、下午的活動、交通、一間美食。後面再用括號標上「區域」，這樣 Mapify 或 Xmind 一讀，就能自動幫你長出心智圖。"]}, {"n": 35, "title": "將旅行行程畫成一張圖", "paras": ["心智圖之外，還有一個很討喜的玩法——把整趟行程畫成一張圖。", "概念很單純，就是把行程摘要餵給生圖 AI，讓它畫出一張一頁式的旅行插畫海報。這種圖丟到親友的群組裡特別好用，行程的亮點一目了然。但有個地方一定要提醒：生圖 AI 畫出來的地圖只是「示意插畫」，好看歸好看，絕對不能拿它當真實的 GPS 地圖來認路。"]}, {"n": 36, "title": "Nano Banana Pro 與 GPT Image (Images 2.0)", "paras": ["生圖工具我挑兩個主流的來比。", "一個是 Nano Banana Pro，它建在 Gemini 上，帶有世界知識的推理力，最厲害的是能在圖片裡生成精確、沒有錯字的繁體中文，解析度上看 4K。另一個是 GPT Image，ChatGPT 內建，文字排版很精緻，前後張圖的風格也很一致。這裡順帶補一個數位素養的點：Gemini 生的圖裡，其實藏著一層看不見的 SynthID 浮水印，教學時很值得跟學生聊聊。"]}, {"n": 37, "title": "提示詞卡片：一頁式旅行海報", "paras": ["這頁附上一張一頁式旅行海報的提示詞卡片。", "我在裡面把視覺要求講得很細：插畫風、暖色調、按天數分成不同色塊、用直式比例，方便在手機上看。還有一個重點，要明確要求它在圖上顯示正確的中文字型跟標題，比如「日本科學與櫻花之旅」，不然生圖 AI 很容易把中文寫成鬼畫符。"]}, {"n": 38, "title": "NotebookLM：打造「只屬於我」的旅遊指南", "paras": ["接下來介紹一個我很推薦的知識庫工具，Google 的 NotebookLM。", "它最特別的地方是，只讀你自己上傳的資料，不受外面雜訊干擾，所以幻覺率壓得很低。玩法是把你蒐集到的 PDF 攻略、交通部落格、官方公告全丟進去當來源。它就能幫你生雙語的語音摘要、常見問答、景點對照表，等於幫你打造一本「只屬於你」的專屬旅遊指南。"]}, {"n": 39, "title": "提示詞卡片：NotebookLM 專屬旅遊指南", "paras": ["搭配 NotebookLM，我也準備了一張提問的提示詞卡片。", "上傳完攻略之後，你可以要求它：只根據我上傳的來源，幫我整理新宿、上野、淺草的必去景點跟美食，而且每一項都要標明出處。這裡有個很關鍵的約束——如果來源裡根本沒提到，就請它老實回你「來源未提及」，千萬別自己編。這一句話，就是它可靠的原因。"]}, {"n": 40, "title": "養一個隨傳隨到的專屬旅遊顧問", "paras": ["再往上一層，你甚至可以養一個隨傳隨到的專屬旅遊顧問。", "付費版可以自訂 GPTs，上傳檔案、預設好提示詞，還能分享給同行的夥伴。免費版的 Gemini 也能做 Gem，用行為指令去約束它，重複使用性很高。我自己在教學上很喜歡這個——帶著學生一起建一個班級的「日本自由行小助手」，過程本身就是一堂很好的資訊素養課。"]}, {"n": 41, "title": "提示詞卡片：自訂 GPTs/Gems 系統指令", "paras": ["這頁給的，是自訂助理的系統指令範例。", "我在裡面把這個助理的角色，直接定義成「日本自助旅行驗證官」。它的行為被約束得很明確：一遇到模糊的時間或價格，就必須提醒使用者去查證；而且只能根據我上傳的知識庫來回答，不准自己往外亂抓。角色定位加上行為約束，一個穩定又可靠的助理就成形了。"]}, {"n": 42, "title": "AI Agent 專章：從「會回答」到「會執行」的旅行代理", "paras": ["接下來這一章，是我特別想花時間講的——AI Agent，代理。", "前面的工具大多是「會回答」，這一章要談的是「會執行」。核心的轉向，是從單純的聊天問答，走向能主動執行、拆解專案、還能跨系統協作。先幫大家把定位講清楚：代理不是旅行社，它真正的價值，是替我們去完成那些很花時間、但可以驗證、也可以回復的雜事。"]}, {"n": 43, "title": "AI 發展的四個層級", "paras": ["要理解代理，我用四個層級來幫大家定位。", "第一級是聊天式 AI，會生文字、給點子，回答你東京去哪玩。第二級是工具型 AI，會呼叫搜尋、地圖、計算器，幫你查景點時間、算交通費。第三級才是真正的 AI Agent，會拆解目標、連續執行、檢查結果再迭代，直接產出完整的航班住宿方案。第四級是多代理系統，好幾個專業代理分工，再由一個主管代理統籌。"]}, {"n": 44, "title": "旅行 Agent 的 7 大工作步驟", "paras": ["那一個旅行代理，實際上是怎麼工作的？我把它拆成七個步驟。", "理解目標、規劃步驟、選擇工具、執行並記錄、驗證結果、提出決策點，然後持續調整。這七步裡，我要特別圈起來的是第六步。任何不可逆的操作，像付款、取消，都一定要停在這裡，做成一個決策點，交回給我們人來授權。這條線，是安全的底線。"]}, {"n": 45, "title": "旅行規劃交給 Agent 的五大原因", "paras": ["你可能會問，為什麼偏偏是旅行規劃，特別適合交給代理？我歸納出五個原因。", "第一，資料很分散，航空、住宿、官網、地圖，得跨來源整合。第二，條件互相牽動，班機時間一動，住宿、交通、景點順序全跟著變。第三，資訊變動快，價格、休館日、天氣都有時效，需要自動盯著。第四，重複的工作太多，比價、換匯、建表格都很機械。第五，結果都可驗證，時間、地點、費用都有明確規則能查。這五點，正好是代理的強項。"]}, {"n": 46, "title": "兩大 AI 代理平台定位對照", "paras": ["代理平台我挑兩個代表來對照。", "一個是 Claude 的 Computer Use，或者說 Cowork，它是知識工作型的代理，會操作桌面、更新試算表、做文件、核對郵件，最後交給你一份完成的檔案。另一個是 Google 的 Antigravity，它是開發型的代理，能在編輯器、終端機、瀏覽器之間自己規劃、執行、測試，適合拿來打造價格監控器這種會重複跑的系統。選擇原則很簡單：單次規劃找 Claude，要蓋一套重複使用的工具就用 Antigravity。"]}, {"n": 47, "title": "旅行 Agent 的十二個專業代理分工", "paras": ["如果把一趟旅行需要的能力全攤開，其實可以拆成十二個專業代理。", "行前的部分就有九個：需求、研究、航班、住宿、交通、景點、餐飲、預算、還有文件代理。到了行中跟行後，再加上監控、應變、驗證三個。你不用一次全用上，但這張分工圖能幫你看清楚，一趟完整的旅行背後，到底有多少件事在同時發生。"]}, {"n": 48, "title": "「主管 + 專業代理 + 獨立反查」多代理協作", "paras": ["這些代理怎麼合作？我用一個「主管加專業代理，再加獨立反查」的架構來說明。", "主管代理負責分派任務、整合方案。各個專業代理，像航班、住宿、交通，就專心輸出自己那塊的結構化表格。最關鍵的是驗證代理，它站在「反方」的角度專門挑錯，找過期資訊、找互相矛盾的地方。整個流程是：專業代理建表、主管整合、驗證代理找碴，最後才生出定案的行程。"]}, {"n": 49, "title": "旅途中的 Agent 即時協助場景", "paras": ["代理不只用在行前，旅途中它一樣能幫大忙。", "比如每天早上給你一份晨間簡報，把當天的天氣、該怎麼穿、預約的時間、交通有沒有異動全整合好。它也能盯著你的班機跟列車，一有延誤或取消，第一時間就幫你找替代班次。碰到下雨或高溫，還能在不動到已預約景點的前提下，局部重算一條室內的替代路線。"]}, {"n": 50, "title": "旅行後的 Agent 整理與歸檔", "paras": ["旅行結束，代理還能幫你把後續收尾。", "費用的核對跟分帳最實用——把收據發票認出來、換算匯率、算出每個人該付該收多少。它也能做預算差異分析，把你原本估的跟實際花的擺在一起，揪出到底是哪裡超支。最後，把這趟的偏好、避雷的點、每個景點實際待多久，都存進 NotebookLM，慢慢累積成你自己的旅行知識庫。"]}, {"n": 51, "title": "導入自動化旅行規劃的五個層級", "paras": ["想導入自動化，不必一步到位，我整理成五個層級，讓大家循序漸進。", "第一級是提示詞輔助，你手動給資料，LLM 幫你整理。第二級加上搜尋跟文件代理，它會自己上網蒐集、比價、建表。第三級是排程監控，定期跑腳本盯票價、天氣跟班次。第四級是工作流自動化，把表單、試算表、日曆、地圖串起來。第五級就是自訂多代理系統，用 Antigravity 這類框架，建一整套 API 跟驗證管線。你在哪一級，就從哪一級開始。"]}, {"n": 52, "title": "提示詞卡片：母提示詞（完整旅行專案代理）", "paras": ["這裡給大家一張分量最重的卡片，我叫它「母提示詞」。", "它適用在 Claude 跟 ChatGPT，一貼上去就能啟動一條龍的規劃。它會約束代理走完整套流程：理解目標、規劃步驟、選擇工具、執行、驗證，一步都不漏。而且我在最後寫了很明確的安全禁令——嚴禁它自動去付款，也嚴禁上傳任何個資。方便，但底線要先守住。"]}, {"n": 53, "title": "工具箱 A-D：需求分析、航班研究、住宿選址、景點資料", "paras": ["接下來這幾頁，是我把代理拆成一個個小任務、做成的提示詞工具箱，先看 A 到 D。", "A 是需求整理代理，把你口語的需求轉成一份結構化的規格書。B 是航班研究代理，幫你比票價、行李、時間的總成本，列出三大方案。C 是住宿選址代理，評估房價、通勤成本、取消期限，連評價裡的缺點都幫你挑出來。D 是景點資料庫代理，建一張含座標、門票、預約、停留時間的標準表。"]}, {"n": 54, "title": "工具箱 E-H：行程最佳化、票券損益、預約期限、行李打包", "paras": ["再來是 E 到 H，這四個偏向把行程排得更聰明。", "E 是行程最佳化代理，依地理分區跟旅客的限制來排，還會刻意留兩成的緩衝時間。F 是票券損益代理，幫你精算周遊券跟單次購票，到底在哪個點會打平。G 是預約期限代理，把開賣日、付款日、免費取消日，全換算成台灣時間提醒你。H 是行李清單代理，依天氣、能不能洗衣、航空的限制，生出一份客製化的行李單。"]}, {"n": 55, "title": "工具箱 I-L：晨間簡報、中斷重排、記帳分帳、經驗歸檔", "paras": ["I 到 L 這四個，主打的是行中跟行後。", "I 是每日晨間簡報代理，出門前三十秒，幫你把即時的天氣跟交通查一遍。J 是中斷重排代理，班機延誤或停駛時，一次給你三個替代方案。K 是支出分帳代理，收據 OCR 認完、自動分類加總，算好誰該收誰該付。L 是旅行後知識庫代理，把踩過的雷、實測的交通時間，都存進你的個人知識庫。"]}, {"n": 56, "title": "工具箱 M-N：獨立稽核與 Antigravity 開發", "paras": ["工具箱的最後兩個，M 跟 N，比較進階。", "M 是驗證代理，也就是稽核，它專門揪那種很容易漏掉的錯：日期跟星期對不上、地理上來回折返、同一筆錢重複計。N 是 Antigravity 開發代理，它會手把手教你，怎麼寫出一個自動化旅行小程式的 Python 架構。前者幫你把關，後者帶你動手，剛好一守一攻。"]}, {"n": 57, "title": "旅行代理的安全防護網與隱私邊界", "paras": ["工具講了這麼多，這一頁我想拉回來談安全，因為這才是能不能安心用的關鍵。", "可以放心交給自動化的，是搜尋、比較、比價、建表、格式轉換、寫草稿這些。需要我們人親自介入的，是購票、訂房、取消、上傳護照保險、接受條款。至於絕對不能交給代理的，是自動扣款、輸入信用卡、輸入護照個資跟驗證碼。還有一個技術上的陷阱要防——「提示注入」，也就是絕不能讓代理把外部網站上的內容，當成最高指令來聽。"]}, {"n": 58, "title": "跨越語言障礙的三大 AI 翻譯利器", "paras": ["進到工具箱的翻譯這一區，我挑三個利器來講，它們能把語言這道牆拆掉。", "沉浸式翻譯做的是雙語對照，網頁跟 PDF 都行，很適合行前拿來讀日文第一手的觀光跟交通公告。Gemini 3.5 的 Live Translate，是延遲極低的「聲音進、聲音出」口譯，已經整合進 Google 翻譯裡。而 Google 翻譯本身的相機即時拍照翻譯，對付菜單跟路牌最直覺。行前、對話、現場，剛好各有一個主力。"]}, {"n": 59, "title": "林獻升老師自製的多功能即時翻譯網頁", "paras": ["這裡我想分享一個自己動手做的東西——我用 AI 寫了一個多功能的即時翻譯網頁。", "線上版就掛在 froglssh.github.io 的頁面上，我也另外打包了一份離線版放在雲端硬碟，就算到了沒網路的地方也能用。我特別想讓大家看到的，是它背後的精神：Vibe Coding。你不需要很強的程式背景，也能親手做出一個貼近自己需求的小工具，這件事現在真的做得到。"]}, {"n": 60, "title": "行程收斂與落地：行程及地圖 App", "paras": ["接下來幾頁，換個角度，聊聊那些幫我們「收斂」的傳統 App，先講行程管理跟地圖。", "Funliday 可以把 AI 排的行程一項項放進去，自動幫你算行車路徑跟每天的時程。去趣 chicTrip 跟日本在地商家合作，常有 AI 抓不到的秘境情報跟折價券。至於 Google Maps 或 Apple Maps，就是到現場找路、走路導航、確認店家還開不開的基本盤。這些落地的細節，還是傳統 App 最紮實。"]}, {"n": 61, "title": "乘換案內、Windy 與 Tabelog", "paras": ["第二組傳統 App，是交通、天氣跟美食。", "查日本的地鐵、新幹線，班次、月台、轉乘時間，乘換案內跟 NAVITIME 最準。天氣的話，Windy 跟 tenki.jp 的降雨雷達跟颱風路徑很精細，能幫你決定要不要啟動雨備。吃的方面，Tabelog 跟 GURUNAVI 是日本在地的評分系統，剛好可以拿來驗證——AI 推薦的那家餐廳，到底是真好吃，還是被講過頭了。"]}, {"n": 62, "title": "極簡匯率、Visit Japan Web 與 Suica", "paras": ["第三組，是匯率、記帳跟一些行中的小工具。", "極簡匯率能離線快速換算，買藥妝、吃大餐的時候，馬上知道折合多少台幣。Visit Japan Web 是行前先填好入境跟檢疫資料，生成一個 QR 碼，過關更快。Suica 或 PASMO 綁進 Apple Wallet，搭車跟自動販賣機都用手機一嗶就好。還有 ecbo cloak，能預約置物櫃跟行李寄存，專門解決拖著大行李到處跑的痛點。"]}, {"n": 63, "title": "什麼是 Vibe Coding？人人都是程式設計師", "paras": ["再往前走一步，我想帶大家看一個進階、但其實門檻不高的玩法——Vibe Coding。", "它的核心精神是，用白話文描述你要什麼，讓 LLM 幫你把程式碼寫出來，完全沒有程式背景也能上手。實作的節奏大概是：先讓它寫出第一版 HTML，用瀏覽器打開看看，再用白話回饋去修，最後部署上網。這套流程我覺得非常適合當高中資訊素養跟跨領域實作的教材。"]}, {"n": 64, "title": "程式實作 1：單檔 HTML 即時翻譯小工具", "paras": ["接下來四頁，是我實際帶學生做過的程式小專案，先看第一個，即時翻譯小工具。", "提示詞卡片裡，我要它做出一個大大的輸入框、能切換中英日韓、有語音朗讀、還能切深色模式。技術上有個硬要求：全部寫在單一一個 HTML 檔裡，JS 跟 CSS 都內嵌進去，還要加上詳細的註解。這樣做出來的東西，一個檔案就能到處帶著用。"]}, {"n": 65, "title": "程式實作 2：貨幣轉換與旅行記帳程式", "paras": ["第二個實作，是貨幣轉換加旅行記帳。", "卡片裡要求它做台幣、日圓的即時匯率換算，一個記帳表單，能自動加總小計，還要有一顆匯出 CSV 的按鈕。技術要求一樣是單檔 HTML，要支援手機的排版，不需要任何伺服器後端，重新整理就清空。麻雀雖小，但旅行當下記帳夠用了。"]}, {"n": 66, "title": "程式實作 3 & 4：互動行程表與隨機抽籤", "paras": ["第三跟第四個實作，我放在一起講——互動行程表，還有隨機抽籤。", "互動行程表的提示詞，會做出可以點開、收合每天日程的卡片，能快速跳頁籤，還能直接連到 Google Maps。隨機抽籤則是拿來解決旅伴的選擇障礙，用轉盤或翻牌，隨機幫大家抽出今晚吃哪、去哪。這頁我還附了部署指引，教你一步步用 GitHub Pages 發布成公開網址，再產生一個 QR 碼分享出去。"]}, {"n": 67, "title": "實戰示範：東京十日夏季行程一條龍工作流", "paras": ["觀念、工具都齊了，這一頁我用一趟東京十日的夏季行程，把整套流程串起來給大家看。", "先用 LLM 做前期規劃，再靠 Deep Research 跟 NotebookLM 蒐集資訊。接著用 Xmind 跟 Funliday 設計行程，用沉浸式翻譯跟 Gemini Live 處理語言。到了現場，Google Maps 加乘換案內負責即時導航，最後行中的應變交給 LLM，回來再記帳、歸檔。你會發現，六個環節其實是這樣一棒接一棒走完的。"]}, {"n": 68, "title": "結語：林獻升老師的幾句叮嚀", "paras": ["走到這裡，我想用幾句話幫今天做個收束，也算是我的幾句叮嚀。", "第一，請當一位「調度者」，主動管理你的數位工具箱，別反過來被工具牽著走。第二，養成「信任但查證」的習慣，凡是價格、時間、地址這些關鍵資訊，自己一定要再張一張安全網。第三，慢慢建立你的個人旅行知識庫，把值得信任的攻略存進 NotebookLM，讓它變成真正屬於你的旅行資產。"]}, {"n": 69, "title": "附錄：AI 輔助自助旅行工具速查表", "paras": ["最後兩頁是附錄，先給大家一張工具速查表，方便回去對照。", "它的橫軸，是我們今天一直在講的六個旅行環節；縱軸，一邊是 AI 的發散工具，像 LLM、AI 搜尋、生圖、NotebookLM，另一邊是傳統的落地 App。整張表就是把今天所有工具，按「什麼時候用、用來發散還是收斂」擺好位置。投影出來當課堂的對照圖，很好用。"]}, {"n": 70, "title": "附錄：林獻升老師的生物與旅行詩作", "paras": ["最後，容我用兩句自己寫的小詩，來結束今天的分享。", "第一句是「樹蛙升歌夜色麗，蜓蜥華行映青山」，第二句是「蛺蝶偉姿飛影高，紅葉楓情秋意中」。從觀察一隻樹蛙、一隻蜻蜓這些繽紛的生命，到編織一趟幸福的旅程，其實對我來說是同一件事——都是帶著好奇，還有對這個世界的一點敬意，出發。謝謝大家。"]}];
+const imgPath = n => `origin_image/slide_${String(n).padStart(2,'0')}.png`;
+let cur = 0;              // 0-indexed
+let autoTimer = null;     // inline autoplay
+let fsTimer = null;       // fullscreen autoplay
+
+const $ = id => document.getElementById(id);
+const mainImg=$('mainImg'), titleEl=$('title'), bodyEl=$('body'),
+      chip=$('chip'), strip=$('strip'), jumpIn=$('jumpIn'),
+      fsImg=$('fsImg'), fsCount=$('fsCount'), fs=$('fs'), badge=$('badge');
+
+// build thumbnails
+SLIDES.forEach((s,i)=>{
+  const d=document.createElement('div');
+  d.className='thumb'; d.dataset.i=i;
+  d.innerHTML=`<img loading="lazy" src="${imgPath(s.n)}"><span class="tn">${s.n}</span>`;
+  d.onclick=()=>{ go(i); };
+  strip.appendChild(d);
+});
+const thumbs=[...strip.children];
+
+function render(){
+  const s=SLIDES[cur];
+  mainImg.src=imgPath(s.n);
+  titleEl.textContent=s.title;
+  bodyEl.innerHTML=s.paras.map(p=>`<p>${p}</p>`).join('');
+  chip.textContent=`第 ${s.n} / 70 頁`;
+  jumpIn.value=s.n;
+  $('textPane').scrollTop=0;
+  thumbs.forEach((t,i)=>t.classList.toggle('active',i===cur));
+  const at=thumbs[cur];
+  if(at) at.scrollIntoView({inline:'center',block:'nearest'});
+  if(fs.classList.contains('show')){ fsImg.src=imgPath(s.n); fsCount.textContent=`${s.n} / 70`; }
+}
+function go(i){ cur=(i+SLIDES.length)%SLIDES.length; render(); if(narrating) speakCurrent(); }
+function nextS(){ go(cur+1); }
+function prevS(){ go(cur-1); }
+
+// ---- 旁白朗讀 (Web Speech API) ----
+let narrating=false, zhVoice=null, advanceTimer=null, allVoices=[];
+const synth=window.speechSynthesis;
+// 語音「自然度」評分：線上 Google、加強版、Siri、神經網路語音優先
+function voiceScore(v){
+  const n=(v.name||'')+' '+(v.voiceURI||''); let s=0;
+  if(/zh[-_]TW|zh[-_]Hant|cmn/i.test(v.lang)) s+=40;       // 繁中臺灣優先
+  else if(/^zh|zh[-_]CN|zh[-_]HK/i.test(v.lang)) s+=20;    // 其他中文次之
+  if(/google/i.test(n)) s+=30;                             // Chrome 線上 Google 語音最自然
+  if(/enhanced|premium|加強|進階|neural|natural/i.test(n)) s+=25;
+  if(/siri/i.test(n)) s+=20;
+  if(/美嘉|meijia|台湾|臺灣|taiwan/i.test(n)) s+=10;
+  return s;
+}
+function buildVoiceList(){
+  if(!synth) return;
+  allVoices=synth.getVoices();
+  // 只保留「Google 國語（臺灣）」語音
+  const gtw=allVoices.filter(v=>/google/i.test(v.name) && /zh[-_]TW|zh[-_]Hant|國語|臺灣|台灣/i.test((v.name||'')+' '+v.lang));
+  const sel=$('voiceSel');
+  sel.innerHTML='';
+  if(gtw.length){
+    gtw.forEach(v=>{
+      const o=document.createElement('option');
+      o.value=allVoices.indexOf(v);
+      o.textContent=`${v.name} (${v.lang}) ✨線上`;
+      sel.appendChild(o);
+    });
+    sel.value=allVoices.indexOf(gtw[0]); zhVoice=gtw[0];
+  }else{
+    // 找不到時給提示（多半是沒用 Chrome 或未連網），仍以系統預設繁中發音
+    const o=document.createElement('option');
+    o.value=''; o.textContent='找不到 Google 國語（臺灣）— 請用 Chrome 並連網';
+    sel.appendChild(o); zhVoice=null;
+  }
+}
+if(synth){
+  buildVoiceList();
+  synth.onvoiceschanged=buildVoiceList;   // 語音清單常延遲載入，載好再補上
+  $('voiceSel').addEventListener('change',()=>{
+    zhVoice=allVoices[parseInt($('voiceSel').value)]||null;
+    if(narrating) speakCurrent();          // 立即試聽新語音
+  });
+}
+// 將整頁（標題＋各段）切成短句，標題只在最前面唸一次，
+// 短句可避開 Chrome 長語句會從頭重播的已知問題（造成標題重複）。
+function buildChunks(s){
+  const out=[];
+  [s.title, ...s.paras].forEach(t=>{
+    (t||'').split(/(?<=[。！？!?；;：])/).forEach(p=>{ p=p.trim(); if(p) out.push(p); });
+  });
+  return out;
+}
+let speakGen=0;   // 世代編號，讓被取消的舊回呼失效，避免重播/重複
+function speakCurrent(){
+  if(!synth){ alert('您的瀏覽器不支援語音朗讀，請改用 Chrome 或 Edge。'); return; }
+  const gen=++speakGen;
+  synth.cancel(); clearTimeout(advanceTimer);
+  const chunks=buildChunks(SLIDES[cur]);
+  const rate=Math.min(2,Math.max(0.5,parseFloat($('rateIn').value)||0.95));
+  const pitch=Math.min(1.5,Math.max(0.5,parseFloat($('pitchIn').value)||1));
+  let i=0;
+  (function next(){
+    if(gen!==speakGen) return;                 // 已被新的朗讀取代
+    if(i>=chunks.length){                       // 本頁唸完
+      if(narrating && cur<SLIDES.length-1){ advanceTimer=setTimeout(()=>{ if(narrating && gen===speakGen) go(cur+1); },900); }
+      else if(narrating){ stopPlay(); }         // 最後一頁停止
+      return;
+    }
+    const u=new SpeechSynthesisUtterance(chunks[i]);
+    u.lang='zh-TW'; if(zhVoice) u.voice=zhVoice; u.rate=rate; u.pitch=pitch;
+    u.onend=()=>{ if(gen!==speakGen) return; i++;
+      // 句與句之間留一點自然停頓，聽起來比較像人在說話
+      const gap = /[。！？!?]$/.test(chunks[i-1]) ? 260 : 90;
+      setTimeout(()=>{ if(gen===speakGen) next(); }, gap);
+    };
+    u.onerror=()=>{};                           // 取消時的 error 忽略
+    synth.speak(u);
+  })();
+}
+// ---- 統一播放控制 ----
+// 模式一：勾選「朗讀完才換頁」→ 由旁白驅動，唸完整頁才換頁（不受秒數限制）
+// 模式二：取消勾選 → 依上方秒數固定換頁（無旁白）
+function secs(){ let v=parseInt($('secIn').value)||8; return Math.max(1,v)*1000; }
+function uiReset(){
+  $('autoBtn').classList.remove('on'); $('autoBtn').innerHTML='▶ 自動播放';
+  $('speakBtn').classList.remove('on'); $('speakBtn').innerHTML='🔊 朗讀旁白';
+  $('fsAuto').innerHTML='▶ 自動播放'; $('fsSpeak').innerHTML='🔊 朗讀旁白';
+  badge.classList.remove('show');
+}
+function stopPlay(){                     // 停止所有播放（計時＋旁白）
+  clearInterval(autoTimer); autoTimer=null;
+  narrating=false; if(synth) synth.cancel(); clearTimeout(advanceTimer);
+  uiReset();
+}
+function startTimer(){                   // 秒數驅動（無旁白）
+  stopPlay(); autoTimer=setInterval(nextS,secs());
+  $('autoBtn').classList.add('on'); $('autoBtn').innerHTML='⏸ 停止播放';
+  $('fsAuto').innerHTML='⏸ 停止播放';
+  badge.textContent='自動播放中…'; badge.classList.add('show');
+}
+function startNarrate(){                 // 旁白驅動：唸完才換頁
+  stopPlay(); narrating=true;
+  $('speakBtn').classList.add('on'); $('speakBtn').innerHTML='⏹ 停止朗讀';
+  $('autoBtn').classList.add('on'); $('autoBtn').innerHTML='⏸ 停止播放';
+  $('fsSpeak').innerHTML='⏹ 停止朗讀'; $('fsAuto').innerHTML='⏸ 停止播放';
+  badge.textContent='旁白朗讀中…'; badge.classList.add('show');
+  speakCurrent();
+}
+function isPlaying(){ return !!autoTimer || narrating; }
+function startPlay(){ $('waitSpeak').checked ? startNarrate() : startTimer(); }
+function togglePlay(){ isPlaying()?stopPlay():startPlay(); }
+
+$('autoBtn').onclick=togglePlay;
+$('fsAuto').onclick=togglePlay;
+$('speakBtn').onclick=()=>{ narrating?stopPlay():startNarrate(); };
+$('fsSpeak').onclick=()=>{ narrating?stopPlay():startNarrate(); };
+// 調整語速或音調時，若正在朗讀則即時套用到本頁
+$('rateIn').addEventListener('change',()=>{ if(narrating) speakCurrent(); });
+$('pitchIn').addEventListener('change',()=>{ if(narrating) speakCurrent(); });
+
+$('next').onclick=nextS; $('prev').onclick=prevS;
+$('fsNext').onclick=nextS; $('fsPrev').onclick=prevS;
+
+jumpIn.addEventListener('change',()=>{
+  let v=parseInt(jumpIn.value)||1; v=Math.max(1,Math.min(70,v)); go(v-1);
+});
+
+// ---- fullscreen ----
+function openFS(){
+  fs.classList.add('show'); render();
+  if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(()=>{});
+}
+function closeFS(){
+  fs.classList.remove('show');
+  if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+}
+$('fsBtn').onclick=openFS; $('fsExit').onclick=closeFS;
+document.addEventListener('fullscreenchange',()=>{ if(!document.fullscreenElement && fs.classList.contains('show')) closeFS(); });
+
+// ---- theme ----
+$('themeBtn').onclick=()=>{
+  const h=document.documentElement, b=document.body;
+  const dark=b.getAttribute('data-theme')!=='dark';
+  b.setAttribute('data-theme',dark?'dark':'light');
+  h.setAttribute('data-theme',dark?'dark':'light');
+  $('themeBtn').innerHTML=dark?'☀️ 淺色':'🌙 深色';
+};
+// sync html attr initially
+document.documentElement.setAttribute('data-theme','light');
+
+// ---- keyboard ----
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='PageDown'){ nextS(); }
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){ prevS(); }
+  else if(e.key==='Escape'){ if(fs.classList.contains('show')) closeFS(); }
+  else if(e.key==='f'||e.key==='F'){ fs.classList.contains('show')?closeFS():openFS(); }
+});
+
+// ---- swipe (touch) on slide & fullscreen ----
+function addSwipe(el){
+  let x0=null;
+  el.addEventListener('touchstart',e=>{ x0=e.touches[0].clientX; },{passive:true});
+  el.addEventListener('touchend',e=>{
+    if(x0===null)return; const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>45){ dx<0?nextS():prevS(); } x0=null;
+  },{passive:true});
+}
+addSwipe(document.querySelector('.slide-pane'));
+addSwipe(fs);
+
+// mouse wheel on filmstrip -> horizontal scroll
+strip.addEventListener('wheel',e=>{ if(e.deltaY){ strip.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false});
+
+// 離開頁面時停止語音
+window.addEventListener('beforeunload',()=>{ if(synth) synth.cancel(); });
+
+render();
+</script>
+</body>
+</html>
