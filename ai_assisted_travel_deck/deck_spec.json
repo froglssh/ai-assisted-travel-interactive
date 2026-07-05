@@ -1,0 +1,1742 @@
+{
+  "deck_name": "ai_assisted_travel_deck",
+  "language": "Chinese",
+  "goal": "提供最完整、系統化的 AI 輔助自助旅行規劃與實作研習簡報",
+  "deck_context": {
+    "source_summary": "整合 6 份深度研究報告與 115 學年度整合版互動網頁講義，涵蓋六個旅行環節、提問技術、AI Agent 能力與安全性、AI 翻譯、傳統 App 工具箱以及網頁小工具程式實作。",
+    "core_claim": "讓 AI 負責發散（創意/大綱/翻譯），傳統 App 負責收斂（交通/即時查證），人類負責最終驗證與決策。",
+    "canonical_terms": [
+      "生成式 LLM",
+      "代理型 AI",
+      "Agentic AI",
+      "發散與收斂",
+      "R-C-F-O-T 框架",
+      "NotebookLM",
+      "Antigravity",
+      "Computer Use"
+    ]
+  },
+  "selected_image_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "max_concurrent_slides": 6,
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "the approved sample slide job prompt",
+    "size": "16:9 landscape, 2048x1152 target",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "style": {
+    "name": "暖系人文專業風",
+    "visual_direction": "warm, elegant, minimalist humanist technical presentation style",
+    "color_palette": "cream background (#FBF6EC), accent colors are amber orange and sage green, text is dark ink brown",
+    "typography": "large and clear Traditional Chinese headings, clean sans-serif font family, structured bullet points"
+  },
+  "approved_style_reference": {
+    "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+    "role": "approved sample slide style reference",
+    "fidelity": "match style only; do not copy layout or content"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "AI 輔助自助旅行：從規劃到記錄的數位工具全解析",
+      "role": "cover",
+      "intent": "Explain the concepts related to AI 輔助自助旅行：從規劃到記錄的數位工具全解析",
+      "key_points": [
+        "主講人：臺北市立麗山高中 生物科 林獻升 老師",
+        "115 學年度整合版研習講義簡報",
+        "涵蓋四大主軸：行程規劃 · 景點介紹 · 語言翻譯 · 筆記記錄"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating AI 輔助自助旅行：從規劃到記錄的數位工具全解析"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "研習講義使用與導覽說明",
+      "role": "agenda",
+      "intent": "Explain the concepts related to 研習講義使用與導覽說明",
+      "key_points": [
+        "簡報結構：三大部（建立觀念、工具巡禮、實戰示範）",
+        "特色：內嵌一鍵複製提示詞卡片與實作程式碼",
+        "目標：幫助自助旅行者與學生建立數位工具調度素養"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 研習講義使用與導覽說明"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "前言：為什麼要談 AI 輔助自助旅行",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 前言：為什麼要談 AI 輔助自助旅行",
+      "key_points": [
+        "旅行規劃方式的質變：從旅遊書到生成式 AI 的演進",
+        "AI 很強，但絕非萬能：AI、傳統 App、人三方各司其職",
+        "這份報告本身就是一次「AI 輔助、人來收斂」的實作示範"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 前言：為什麼要談 AI 輔助自助旅行"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "傳統自助旅行規劃的痛點",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 傳統自助旅行規劃的痛點",
+      "key_points": [
+        "資訊超載：開數十個網頁比對交通與景點",
+        "變動頻繁：預算、天氣、體力與時間的複雜相依",
+        "跨語言障礙：外文官方資料的閱讀與現場溝通難題",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 傳統自助旅行規劃的痛點"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "第一部：建立觀念 — 六個環節與混合式工具箱",
+      "role": "section divider",
+      "intent": "Explain the concepts related to 第一部：建立觀念 — 六個環節與混合式工具箱",
+      "key_points": [
+        "1-1 旅行規劃方式變了",
+        "1-2 生成式 AI 與代理型 AI 區別",
+        "1-3 自助旅行的六個環節",
+        "1-4 核心心法：發散、收斂與驗證",
+        "1-5 提問的三個層次"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 第一部：建立觀念 — 六個環節與混合式工具箱"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "數位化旅行的最新趨勢數據",
+      "role": "data evidence",
+      "intent": "Explain the concepts related to 數位化旅行的最新趨勢數據",
+      "key_points": [
+        "55%+ 的旅客已在旅程中使用 AI（Phocuswright 2026 追蹤數據）",
+        "80%+ 的使用者回報 AI 讓旅行體驗變好",
+        "體驗經濟的興起：旅客更重視「玩得深、玩得剛好」"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 數位化旅行的最新趨勢數據"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "生成式 AI 與代理型 AI 的本質區別",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 生成式 AI 與代理型 AI 的本質區別",
+      "key_points": [
+        "生成式 AI（顧問）：擅長回答問題、生成文字（如：東京十天怎麼玩）",
+        "代理型 AI（助理）：能動手執行、拆解步驟、呼叫外部工具（如：串接地圖與機票 API）"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 生成式 AI 與代理型 AI 的本質區別"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "什麼是代理洗綠 (Agentwashing)？",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 什麼是代理洗綠 (Agentwashing)？",
+      "key_points": [
+        "概念：將傳統照本宣科的 chatbot 包裝成「AI 代理」的行銷手法",
+        "真正代理的標準：自主拆解任務、錯誤自我修正、非線性連續執行",
+        "旅行者的選擇：它是「會動手」還是「只會動嘴」？"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 什麼是代理洗綠 (Agentwashing)？"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "自助旅行的六個環節架構",
+      "role": "agenda",
+      "intent": "Explain the concepts related to 自助旅行的六個環節架構",
+      "key_points": [
+        "前期規劃 ➔ 資訊蒐集 ➔ 行程設計",
+        "語言翻譯 ➔ 即時導航 ➔ 行中調整與紀錄",
+        "這不是死板的單向順序，而是一個動態來回的循環"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 自助旅行的六個環節架構"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 10,
+      "title": "環節 ① · 前期規劃 (Pre-planning)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ① · 前期規劃 (Pre-planning)",
+      "key_points": [
+        "核心任務：決定目的地、天數、預算上限、同行成員與旅行主題",
+        "AI 大腦的角色：把模糊的渴望（「想去日本玩」）轉化為具體且可執行的初步框架"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ① · 前期規劃 (Pre-planning)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 11,
+      "title": "環節 ② · 資訊蒐集 (Information Gathering)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ② · 資訊蒐集 (Information Gathering)",
+      "key_points": [
+        "核心任務：深入蒐羅景點細節、住宿評價、交通票券、官方規定",
+        "AI 大腦的角色：跨來源網頁彙整、摘要冗長文檔、建立專屬知識庫"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ② · 資訊蒐集 (Information Gathering)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 12,
+      "title": "環節 ③ · 行程設計 (Itinerary Design)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ③ · 行程設計 (Itinerary Design)",
+      "key_points": [
+        "核心任務：將零散資訊組織成每日具體日程、計算動線與最佳化時間",
+        "AI 大腦的角色：細化時程、安排地理動線、一鍵轉成心智圖或資訊圖表"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ③ · 行程設計 (Itinerary Design)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 13,
+      "title": "環節 ④ · 語言翻譯 (Language Translation)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ④ · 語言翻譯 (Language Translation)",
+      "key_points": [
+        "核心任務：在異地處理外文菜單、道路標示、搭車公告以及現場跨語言溝通",
+        "AI 大腦的角色：即時雙向口譯、相機視覺即時翻譯、雙語對照網頁閱讀"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ④ · 語言翻譯 (Language Translation)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 14,
+      "title": "環節 ⑤ · 即時導航 (Real-time Navigation)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ⑤ · 即時導航 (Real-time Navigation)",
+      "key_points": [
+        "核心任務：抵達目的地後的找路、查列車班次、分析即時天氣狀況",
+        "AI 大腦的角色：結合相機與語音的現場環境查詢、即時天氣動態分析"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ⑤ · 即時導航 (Real-time Navigation)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 15,
+      "title": "環節 ⑥ · 行中調整與紀錄 (In-trip Adjustment & Recording)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 環節 ⑥ · 行中調整與紀錄 (In-trip Adjustment & Recording)",
+      "key_points": [
+        "核心任務：因應突發狀況（如延誤、下雨）調整行程，記錄旅途見聞與花費",
+        "AI 大腦的角色：臨時重排日程、收據發票 OCR 辨識、自動生成遊記草稿"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 環節 ⑥ · 行中調整與紀錄 (In-trip Adjustment & Recording)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 16,
+      "title": "自助旅行規劃的黃金鐵三角",
+      "role": "process",
+      "intent": "Explain the concepts related to 自助旅行規劃的黃金鐵三角",
+      "key_points": [
+        "AI 負責發散：天馬行空發想、行程骨架建構、多語言整理",
+        "傳統 App 負責收斂：地鐵班次（乘換案內）、美食評分（Tabelog）等精準落地",
+        "人負責驗證：進行最終核對、承擔風險與決定付款"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 自助旅行規劃的黃金鐵三角"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ],
+      "sample_approved": true
+    },
+    {
+      "number": 17,
+      "title": "核心心法：信任，但要查證 (Trust but Verify)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 核心心法：信任，但要查證 (Trust but Verify)",
+      "key_points": [
+        "AI 的本質：「才華洋溢但偶爾說謊的實習生」",
+        "警惕幻覺：AI 可能很有自信地推薦已經歇業的餐廳或錯誤的營業時間",
+        "指揮官思維：我們是調度數位資源的「指揮者」，而非盲從工具的執行者",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 核心心法：信任，但要查證 (Trust but Verify)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 18,
+      "title": "提問的三個漸進層次",
+      "role": "process",
+      "intent": "Explain the concepts related to 提問的三個漸進層次",
+      "key_points": [
+        "第一層：限制條件起手式（R-C-F-O-T 框架）",
+        "第二層：讓 AI 反向面試你（Human-in-the-loop）",
+        "第三層：蘇格拉底式追問（反覆磨合）"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提問的三個漸進層次"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 19,
+      "title": "第一層提問：R-C-F-O-T 結構化框架",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 第一層提問：R-C-F-O-T 結構化框架",
+      "key_points": [
+        "Role (角色)：設定 AI 為「東京在地專業導遊」",
+        "Context (情境)：家庭成員（兩大兩小）、夏季七月、天數預算",
+        "Format (格式)：分主題行程，標出待證事項",
+        "Objective (目標)：生成初步骨架與限制提醒",
+        "Tone (語氣)：在地朋友、重點清楚"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 第一層提問：R-C-F-O-T 結構化框架"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 20,
+      "title": "第二層提問：引導 AI 反向詢問偏好",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 第二層提問：引導 AI 反向詢問偏好",
+      "key_points": [
+        "心法：不要急著要行程，先要求 AI 提出 8-10 個關鍵問題來面試你",
+        "作用：挖掘出隱性需求（體力極限、起床時間、對特定食物過敏、排隊耐受度）",
+        "教學價值：最佳的「人機協同 (Human-in-the-loop)」實作案例"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 第二層提問：引導 AI 反向詢問偏好"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 21,
+      "title": "第三層提問：蘇格拉底式追問磨行程",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 第三層提問：蘇格拉底式追問磨行程",
+      "key_points": [
+        "做法：對 AI 的初稿進行連續質疑與追問",
+        "範例：「為什麼這個順序比較順？」、「A 景點到 B 景點地鐵轉乘要多久？有沒有不用換車的路線？」",
+        "效果：逼迫 AI 攤開推理邏輯，補上初稿漏洞，實現「共同創作」"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 第三層提問：蘇格拉底式追問磨行程"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 22,
+      "title": "第二部：工具巡禮 — 各式 AI 程式與實際應用",
+      "role": "section divider",
+      "intent": "Explain the concepts related to 第二部：工具巡禮 — 各式 AI 程式與實際應用",
+      "key_points": [
+        "生成式 LLM 比較",
+        "AI 視覺與 AI 搜尋 (Deep Research)",
+        "行程視覺化 (心智圖與生圖)",
+        "知識庫與自訂助理",
+        "AI Agent 專章",
+        "AI 翻譯與傳統 App 工具箱"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 第二部：工具巡禮 — 各式 AI 程式與實際應用"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 23,
+      "title": "生成式 LLM 三大主流模型",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 生成式 LLM 三大主流模型",
+      "key_points": [
+        "ChatGPT (OpenAI)：對話流暢、生態最完整、多模態視覺強大",
+        "Gemini (Google)：地理資訊與即時地圖串接極強，整合 Google Workspace",
+        "Claude (Anthropic)：長文本理解力極佳、邏輯條理清晰、適合分析攻略 PDF"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 生成式 LLM 三大主流模型"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 24,
+      "title": "三大模型在旅行中的最佳分工",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 三大模型在旅行中的最佳分工",
+      "key_points": [
+        "ChatGPT ➔ 適合第一線的創意規劃、情境問答與視覺相機互動",
+        "Gemini ➔ 適合需要確認精確地理位置、路線規劃與景點查詢",
+        "Claude ➔ 適合在行前餵入數十萬字的攻略包、長篇文章，進行比對去蕪存菁"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 三大模型在旅行中的最佳分工"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 25,
+      "title": "提示詞卡片：限制條件起手式 (R-C-F-O-T)",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：限制條件起手式 (R-C-F-O-T)",
+      "key_points": [
+        "展示 ChatGPT/Gemini/Claude 通用的高畫質前期規劃提示詞",
+        "包含變數設定（目的地、天數、成員、主題、預算）",
+        "強調必須在結尾要求 AI 標註「待查證事項」與「天候/簽證限制」",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：限制條件起手式 (R-C-F-O-T)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 26,
+      "title": "AI 多模態視覺互動的應用",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to AI 多模態視覺互動的應用",
+      "key_points": [
+        "工具：ChatGPT (視覺)、Copilot、Gemini Live、Chrome AI",
+        "應用場景：對著澀谷街頭建築拍照問「這是哪裡？」➔ Gemini Live 即時語音導覽",
+        "翻譯應用：路牌、日文公告、餐廳紙本菜單拍下即翻",
+        "意義：將手機鏡頭轉化為 AI 的雙眼，實現「邊走邊問」"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating AI 多模態視覺互動的應用"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 27,
+      "title": "AI 搜尋與傳統搜尋的本質差異",
+      "role": "comparison",
+      "intent": "Explain the concepts related to AI 搜尋與傳統搜尋的本質差異",
+      "key_points": [
+        "傳統 Google 搜尋：只給一堆網頁連結，需要使用者自行點開、過濾、整理",
+        "AI 搜尋：直接閱讀數十個網頁，吐出整理好的答案，並精確標註「資料來源」",
+        "價值：附出處的特性是「查證與防幻覺」的利器"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating AI 搜尋與傳統搜尋的本質差異"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 28,
+      "title": "Arc Search、Perplexity 與 Felo Search",
+      "role": "comparison",
+      "intent": "Explain the concepts related to Arc Search、Perplexity 與 Felo Search",
+      "key_points": [
+        "Arc Search：手機專屬，一鍵 Browse for me 閱讀十幾個網頁，快速建立目的地輪廓",
+        "Perplexity：結構化拆解問題，生出精確表格行程，每個說法皆可追溯來源",
+        "Felo Search：網路+檔案雙搜，支援三十多國語言，跨語言查日文觀光資訊最方便"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating Arc Search、Perplexity 與 Felo Search"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 29,
+      "title": "什麼是深度研究 (Deep Research)？",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 什麼是深度研究 (Deep Research)？",
+      "key_points": [
+        "運作機制：非快問快答，而是派一個 AI 研究員幫你徹夜研究 15-30 分鐘",
+        "行為：AI 會自己產生搜尋關鍵字、點開數十個網頁、遇到資訊衝突會自行反覆驗證",
+        "產出：一份結構嚴密、多達數千字且每一段都附來源網址的 PDF/Markdown 長報告"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 什麼是深度研究 (Deep Research)？"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 30,
+      "title": "四大平台 Deep Research 成果特色",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 四大平台 Deep Research 成果特色",
+      "key_points": [
+        "OpenAI Deep Research ➔ 條列細膩、資料標註最為嚴格與多維",
+        "Gemini 深度研究 ➔ 像寫一篇終極旅遊指南，自動加入穿搭與氣候分析",
+        "Perplexity ➔ 強調宏觀結構與表格排版，方便使用者一目了然",
+        "Felo ➔ 親和的跨語言翻譯，將日本官網日文報告無縫融合成繁中"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 四大平台 Deep Research 成果特色"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 31,
+      "title": "提示詞卡片：深度研究模式",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：深度研究模式",
+      "key_points": [
+        "展示適用於 OpenAI / Gemini 深度研究的提示詞",
+        "要求涵蓋：分區玩法、夏季氣候穿搭、避開過度觀光替代點、票券比較",
+        "指定輸出：一份長報告，且開頭必須放置「待人為查證清單」"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：深度研究模式"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 32,
+      "title": "世界旅遊基準測試 (WorldTravel Benchmark)",
+      "role": "data evidence",
+      "intent": "Explain the concepts related to 世界旅遊基準測試 (WorldTravel Benchmark)",
+      "key_points": [
+        "測試結論：即使最頂尖的 LLM 代理，在將行程落地執行時，成功率仍偏低",
+        "幻覺重災區：多模態網頁預訂、時效性極高的票價、臨時變動的營業時間",
+        "核心啟示：Deep Research 的產出是「高質量的初稿」，絕非「不必查證的定稿」",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 世界旅遊基準測試 (WorldTravel Benchmark)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 33,
+      "title": "行程大綱視覺化與動態決策",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 行程大綱視覺化與動態決策",
+      "key_points": [
+        "工具：Mapify、Xmind AI、Albus AI",
+        "原理：將線性文字行程（Day 1 ➔ Day 2）轉化為放射狀心智圖",
+        "妙用：文字行程容易讓人僵化走完；心智圖能讓人一眼看清「鄰近節點」",
+        "應用：遇上臨時閉館或下雨，看著心智圖能秒換備案而不影響整體動線"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 行程大綱視覺化與動態決策"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 34,
+      "title": "提示詞卡片：輸出 Markdown 匯入心智圖",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：輸出 Markdown 匯入心智圖",
+      "key_points": [
+        "引導 LLM 將討論定案的行程格式化為標準 Markdown 樹狀結構",
+        "# 代表第一層 (天數)；- 代表第二層 (上午/下午活動、交通、一間美食)",
+        "後方括號標註「區域」，方便 Mapify/Xmind 讀取自動生成心智圖"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：輸出 Markdown 匯入心智圖"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 35,
+      "title": "將旅行行程畫成一張圖",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 將旅行行程畫成一張圖",
+      "key_points": [
+        "概念：將文字行程摘要餵給圖像生成 AI，畫出一頁式旅行插畫海報",
+        "作用：便於在同行親友的通訊群組分享、一目了然行程亮點",
+        "限制：生圖 AI 產出的地圖是「示意插畫」，絕非真實 GPS 地圖"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 將旅行行程畫成一張圖"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Nano Banana Pro 與 GPT Image (Images 2.0)",
+      "role": "comparison",
+      "intent": "Explain the concepts related to Nano Banana Pro 與 GPT Image (Images 2.0)",
+      "key_points": [
+        "Nano Banana Pro：建基於 Gemini，具備世界知識推理，能在圖片中生成精確、無錯字的繁體中文，高達 4K 解析度",
+        "GPT Image：ChatGPT 內建生圖，文字排版精美，前後視覺風格一致性高",
+        "安全素養：Gemini 生成的圖片內置不可見的 SynthID 浮水印，教學時應適時融入數位素養說明"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating Nano Banana Pro 與 GPT Image (Images 2.0)"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 37,
+      "title": "提示詞卡片：一頁式旅行海報",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：一頁式旅行海報",
+      "key_points": [
+        "詳述海報視覺提示詞：插畫風、暖色調、按天分色塊、直式比例（適合手機）",
+        "要求在圖上顯示正確的中文字型與標題（如：日本科學與櫻花之旅）"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：一頁式旅行海報"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 38,
+      "title": "NotebookLM：打造「只屬於我」的旅遊指南",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to NotebookLM：打造「只屬於我」的旅遊指南",
+      "key_points": [
+        "核心特點：只讀取使用者上傳的資料來源，排除外部雜訊，幻覺率降至最低",
+        "玩法：將收集的 PDF 攻略、交通部落格、官方公告上傳為來源",
+        "功能：生成雙語語音摘要、常見問答、景點對照表，為個人旅行量身打造"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating NotebookLM：打造「只屬於我」的旅遊指南"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 39,
+      "title": "提示詞卡片：NotebookLM 專屬旅遊指南",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：NotebookLM 專屬旅遊指南",
+      "key_points": [
+        "上傳攻略後對 NotebookLM 的提問框架",
+        "要求：只根據上傳來源整理新宿/上野/淺草必去與美食，並標明出處",
+        "若來源中未提及，要求 AI 誠實回答「來源未提及」",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：NotebookLM 專屬旅遊指南"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 40,
+      "title": "養一個隨傳隨到的專屬旅遊顧問",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 養一個隨傳隨到的專屬旅遊顧問",
+      "key_points": [
+        "付費版功能：自訂 GPTs (ChatGPT) ➔ 上傳檔案、預設提示詞、分享給同伴",
+        "免費版功能：自訂 Gem (Gemini) ➔ 行為指令約束、重複使用性高",
+        "教學實踐：帶領學生共同建構班級「日本自由行小助手」的資訊素養價值"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 養一個隨傳隨到的專屬旅遊顧問"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 41,
+      "title": "提示詞卡片：自訂 GPTs/Gems 系統指令",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：自訂 GPTs/Gems 系統指令",
+      "key_points": [
+        "完整的 System Prompt 範例，定義自訂助理的角色為「日本自助旅行驗證官」",
+        "約束行為：遇到模糊時間或價格，必須要求使用者查證，限制只使用上傳的知識庫回答",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：自訂 GPTs/Gems 系統指令"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 42,
+      "title": "AI Agent 專章：從「會回答」到「會執行」的旅行代理",
+      "role": "section divider",
+      "intent": "Explain the concepts related to AI Agent 專章：從「會回答」到「會執行」的旅行代理",
+      "key_points": [
+        "核心轉向：從單純的聊天問答，走向主動執行、拆解專案與跨系統協作",
+        "代理定位：不是旅行社，其核心是替人完成高耗時、可驗證、可回復的雜事"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating AI Agent 專章：從「會回答」到「會執行」的旅行代理"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 43,
+      "title": "AI 發展的四個層級",
+      "role": "process",
+      "intent": "Explain the concepts related to AI 發展的四個層級",
+      "key_points": [
+        "級別 1 · 聊天式 AI ➔ 文字生成、給出點子（回答東京去哪玩）",
+        "級別 2 · 工具型 AI ➔ 呼叫搜尋、地圖、計算器（查景點時間、算交通費）",
+        "級別 3 · AI Agent ➔ 拆解目標、連續執行、檢查結果並迭代（產出完整航班住宿方案）",
+        "級別 4 · 多代理系統 (Multi-Agent) ➔ 多個專業代理分工，主管代理協同（航班、預算、風險代理協作）"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating AI 發展的四個層級"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 44,
+      "title": "旅行 Agent 的 7 大工作步驟",
+      "role": "process",
+      "intent": "Explain the concepts related to 旅行 Agent 的 7 大工作步驟",
+      "key_points": [
+        "理解目標 ➔ 規劃步驟 ➔ 選擇工具 ➔ 執行與記錄 ➔ 驗證結果 ➔ 提出決策點 ➔ 持續調整",
+        "核心重點：任何涉及不可逆的操作（付款、取消），必須在第 6 步提出決策點，交由人類授權"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅行 Agent 的 7 大工作步驟"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 45,
+      "title": "旅行規劃交給 Agent 的五大原因",
+      "role": "architecture",
+      "intent": "Explain the concepts related to 旅行規劃交給 Agent 的五大原因",
+      "key_points": [
+        "資料分散：涉航空、住宿、官網、地圖等，需要跨來源整合",
+        "條件相依：航班時間會牽動住宿、交通與景點順序，牽一髮動全身",
+        "資訊易變：價格、休館日、天氣具備時效性，需自動化監控",
+        "重重複工作多：比價、換匯、建表工作機械性高",
+        "結果可驗證：時間、地理位置、費用皆有明確規則可查證"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅行規劃交給 Agent 的五大原因"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 46,
+      "title": "兩大 AI 代理平台定位對照",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 兩大 AI 代理平台定位對照",
+      "key_points": [
+        "Claude Computer Use / Cowork：知識工作代理。操作桌面、更新試算表、製作文件、核對郵件，交付完成的文檔",
+        "Google Antigravity：代理式開發平台。能在編輯器、終端與瀏覽器間自主規劃、執行與測試，適合打造價格監控器與多代理管線",
+        "選擇原則：單次規畫用 Claude，建造重複使用的工具與系統用 Antigravity"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 兩大 AI 代理平台定位對照"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 47,
+      "title": "旅行 Agent 的十二個專業代理分工",
+      "role": "architecture",
+      "intent": "Explain the concepts related to 旅行 Agent 的十二個專業代理分工",
+      "key_points": [
+        "行前：需求代理、研究代理、航班代理、住宿代理、交通代理、景點代理、餐飲代理、預算代理、文件代理",
+        "行中與行後：監控代理、應變代理、驗證代理"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅行 Agent 的十二個專業代理分工"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 48,
+      "title": "「主管 + 專業代理 + 獨立反查」多代理協作",
+      "role": "architecture",
+      "intent": "Explain the concepts related to 「主管 + 專業代理 + 獨立反查」多代理協作",
+      "key_points": [
+        "主管代理：負責任務分派與方案整合",
+        "專業代理（航班、住宿、交通等）：專注輸出結構化資料表格",
+        "驗證代理：站在「反方角度」專門查錯、找出過期資訊與矛盾",
+        "流程：專業代理建表 ➔ 主管整合 ➔ 驗證代理找碴 ➔ 生成最終行程"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 「主管 + 專業代理 + 獨立反查」多代理協作"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 49,
+      "title": "旅途中的 Agent 即時協助場景",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 旅途中的 Agent 即時協助場景",
+      "key_points": [
+        "每日晨間簡報：整合當日天氣、穿著、預約時間與交通異動",
+        "航班與列車監控：自動追蹤延誤、取消，第一時間搜尋替代班次",
+        "雨天與高溫改排：在不影響已預約景點下，局部重算室內替代路線"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅途中的 Agent 即時協助場景"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 50,
+      "title": "旅行後的 Agent 整理與歸檔",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 旅行後的 Agent 整理與歸檔",
+      "key_points": [
+        "費用核對與分帳：辨識收據發票、匯率換算、計算每人應付應收",
+        "預算差異分析：比對預估與實際花費，抓出超支元兇",
+        "個人旅行知識庫：保存偏好、避雷點與實際停留時間至 NotebookLM"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅行後的 Agent 整理與歸檔"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 51,
+      "title": "導入自動化旅行規劃的五個層級",
+      "role": "process",
+      "intent": "Explain the concepts related to 導入自動化旅行規劃的五個層級",
+      "key_points": [
+        "1 級 · 提示詞輔助：手動提供資料，LLM 整理文件",
+        "2 級 · 搜尋與文件代理：代理自行上網搜集比價建表",
+        "3 級 · 排程監控：定期跑腳本追蹤票價、天氣與班次",
+        "4 級 · 工作流程自動化：串接表單、試算表、日曆與地圖",
+        "5 級 · 自訂多代理系統：利用 Antigravity 等框架建立完整 API 與驗證管線"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 導入自動化旅行規劃的五個層級"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 52,
+      "title": "提示詞卡片：母提示詞（完整旅行專案代理）",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 提示詞卡片：母提示詞（完整旅行專案代理）",
+      "key_points": [
+        "提供適用於 Claude / ChatGPT 的母提示詞，用以啟動一條龍規劃",
+        "約束代理完成「理解目標、規劃步驟、選擇工具、執行、驗證」的完整工作流",
+        "寫明安全禁令：嚴禁自動執行付款或上傳個資",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 提示詞卡片：母提示詞（完整旅行專案代理）"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 53,
+      "title": "工具箱 A-D：需求分析、航班研究、住宿選址、景點資料",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 工具箱 A-D：需求分析、航班研究、住宿選址、景點資料",
+      "key_points": [
+        "A · 需求整理代理 ➔ 口語需求轉結構化規格書",
+        "B · 航班研究代理 ➔ 比較票價、行李及時間總成本，列出三大方案",
+        "C · 住宿選址代理 ➔ 評估房價、通勤成本、取消期限與評價缺點",
+        "D · 景點資料庫代理 ➔ 建立包含座標、門票、預約、停留時間的標準列"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 工具箱 A-D：需求分析、航班研究、住宿選址、景點資料"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 54,
+      "title": "工具箱 E-H：行程最佳化、票券損益、預約期限、行李打包",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 工具箱 E-H：行程最佳化、票券損益、預約期限、行李打包",
+      "key_points": [
+        "E · 行程最佳化代理 ➔ 地理分區與旅客限制排程，預留 20% 緩衝",
+        "F · 票券損益代理 ➔ 精算周遊券 vs 單次購票的損益平衡點",
+        "G · 預約期限代理 ➔ 列出開賣日、付款日與免費取消日之臺灣時間提醒",
+        "H · 行李清單代理 ➔ 依天氣、洗衣條件與航空限制生成客製化行李單"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 工具箱 E-H：行程最佳化、票券損益、預約期限、行李打包"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 55,
+      "title": "工具箱 I-L：晨間簡報、中斷重排、記帳分帳、經驗歸檔",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 工具箱 I-L：晨間簡報、中斷重排、記帳分帳、經驗歸檔",
+      "key_points": [
+        "I · 每日晨間簡報代理 ➔ 出門前 30 秒查核即時天氣交通",
+        "J · 中斷重排代理 ➔ 因應航班延誤或停駛，提出三個替代應變方案",
+        "K · 旅行支出分帳代理 ➔ 收據 OCR 辨識、分類加總、計算應收應付",
+        "L · 旅行後知識庫代理 ➔ 踩雷經驗、交通實測存入個人知識庫"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 工具箱 I-L：晨間簡報、中斷重排、記帳分帳、經驗歸檔"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 56,
+      "title": "工具箱 M-N：獨立稽核與 Antigravity 開發",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 工具箱 M-N：獨立稽核與 Antigravity 開發",
+      "key_points": [
+        "M · 驗證代理 (稽核) ➔ 專門揪出日期星期衝突、地理折返、重複計費等錯誤",
+        "N · Antigravity 開發代理 ➔ 指導如何寫出一個自動化旅行小程式的 Python 架構"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 工具箱 M-N：獨立稽核與 Antigravity 開發"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 57,
+      "title": "旅行代理的安全防護網與隱私邊界",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 旅行代理的安全防護網與隱私邊界",
+      "key_points": [
+        "適合自動化：搜尋、比較、比價、建表、格式轉換、寫草稿",
+        "需要人介入：購票、訂房、取消、上傳護照保險、接受條款",
+        "嚴禁交給代理：自動扣款、輸入信用卡、輸入護照個資與驗證碼",
+        "防範「提示注入 (Prompt Injection)」：禁止代理將外部網站內容當作最高命令",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 旅行代理的安全防護網與隱私邊界"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 58,
+      "title": "跨越語言障礙的三大 AI 翻譯利器",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 跨越語言障礙的三大 AI 翻譯利器",
+      "key_points": [
+        "沉浸式翻譯：雙語對照網頁/PDF 翻譯，適合行前閱讀日文第一手觀光與交通公告",
+        "Gemini 3.5 Live Translate：極低延遲的「聲音進、聲音出」對話口譯，整合於 Google 翻譯",
+        "Google 翻譯：相機即時拍照翻譯（菜單、路牌標示）"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 跨越語言障礙的三大 AI 翻譯利器"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 59,
+      "title": "林獻升老師自製的多功能即時翻譯網頁",
+      "role": "case study",
+      "intent": "Explain the concepts related to 林獻升老師自製的多功能即時翻譯網頁",
+      "key_points": [
+        "實例介紹：線上版即時翻譯工具（froglssh.github.io/multi-functional-translator-online）",
+        "離線版下載：Google Drive 離線版包（沒網時依然可用）",
+        "核心精神：Vibe Coding，一般人也能動手做出貼近需求的專屬網頁小工具"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 林獻升老師自製的多功能即時翻譯網頁"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 60,
+      "title": "行程收斂與落地：行程及地圖 App",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 行程收斂與落地：行程及地圖 App",
+      "key_points": [
+        "Funliday：將 AI 行程逐項放入，自動計算行車路徑與每日時程",
+        "去趣 chicTrip：與日本在地商家合作，提供 AI 沒抓到的秘境情報與折價券",
+        "Google Maps / Apple Maps：現場找路、步行導航、確認周邊商鋪營業狀態"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 行程收斂與落地：行程及地圖 App"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 61,
+      "title": "乘換案內、Windy 與 Tabelog",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 乘換案內、Windy 與 Tabelog",
+      "key_points": [
+        "乗換案内 NAVITIME / JapanTravel：查日本地鐵、新幹線班次、月台、轉乘時間最精準",
+        "Windy / tenki.jp：提供高度精準的降雨雷達與颱風路徑，適時決定是否啟動雨備",
+        "Tabelog / GURUNAVI：日本在地美食評分系統，用以驗證 AI 推薦 of 餐廳是否過譽"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 乘換案內、Windy 與 Tabelog"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 62,
+      "title": "極簡匯率、Visit Japan Web 與 Suica",
+      "role": "comparison",
+      "intent": "Explain the concepts related to 極簡匯率、Visit Japan Web 與 Suica",
+      "key_points": [
+        "極簡匯率：離線匯率快速換算，買藥妝、吃大餐即時掌握台幣成本",
+        "Visit Japan Web：行前填寫海報與檢疫，生成入境 QR 碼",
+        "Suica / PASMO：手機感應搭車與自動販賣機付款，出發前先綁定 Apple Wallet",
+        "ecbo cloak：預約置物櫃與行李寄存服務，解決大件行李移動痛點",
+        "--"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 極簡匯率、Visit Japan Web 與 Suica"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 63,
+      "title": "什麼是 Vibe Coding？人人都是程式設計師",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 什麼是 Vibe Coding？人人都是程式設計師",
+      "key_points": [
+        "核心精神：使用白話文描述需求，讓 LLM 代寫程式碼，無程式背景亦可上手",
+        "實作心法：先寫出第一版 HTML ➔ 用瀏覽器打開 ➔ 白話回饋修改 ➔ 部署上網",
+        "教學實踐：非常適合作為高中資訊素養與跨領域實作的教學教材"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 什麼是 Vibe Coding？人人都是程式設計師"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 64,
+      "title": "程式實作 1：單檔 HTML 即時翻譯小工具",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 程式實作 1：單檔 HTML 即時翻譯小工具",
+      "key_points": [
+        "提示詞卡片：包含大輸入框、中英日韓切換、語音朗讀、深色模式切換",
+        "技術要求：全部寫在單一 .html 檔案中，內嵌 JS 與 CSS，加上詳細註解"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 程式實作 1：單檔 HTML 即時翻譯小工具"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 65,
+      "title": "程式實作 2：貨幣轉換與旅行記帳程式",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 程式實作 2：貨幣轉換與旅行記帳程式",
+      "key_points": [
+        "提示詞卡片：台幣/日圓即時匯率換算、記帳表單、自動加總小計、匯出 CSV 按鈕",
+        "技術要求：單檔 HTML，支援手機排版，無須伺服器後端，重整即清空"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 程式實作 2：貨幣轉換與旅行記帳程式"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 66,
+      "title": "程式實作 3 & 4：互動行程表與隨機抽籤",
+      "role": "concept explanation",
+      "intent": "Explain the concepts related to 程式實作 3 & 4：互動行程表與隨機抽籤",
+      "key_points": [
+        "實作 3 ➔ 互動行程表提示詞（點擊卡片展開/收合當日日程、快速跳轉頁籤、連結 Google Maps）",
+        "實作 4 ➔ 隨機抽籤決策器提示詞（解決旅伴選擇障礙，轉盤或翻牌隨機抽出晚餐景點）",
+        "部署指引：如何一步步利用 GitHub Pages 部署成公開網域並產生 QR 碼"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 程式實作 3 & 4：互動行程表與隨機抽籤"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 67,
+      "title": "實戰示範：東京十日夏季行程一條龍工作流",
+      "role": "process",
+      "intent": "Explain the concepts related to 實戰示範：東京十日夏季行程一條龍工作流",
+      "key_points": [
+        "① 前期規劃 (LLM) ➔ ② 資訊蒐集 (Deep Research & NotebookLM)",
+        "③ 行程設計 (Xmind & funliday) ➔ ④ 語言翻譯 (沉浸式翻譯 & Gemini Live)",
+        "⑤ 即時導航 (Google Maps & 乘換案內) ➔ ⑥ 行中應變 (LLM) 與旅行後記帳歸檔"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 實戰示範：東京十日夏季行程一條龍工作流"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 68,
+      "title": "結語：林獻升老師的幾句叮嚀",
+      "role": "summary",
+      "intent": "Explain the concepts related to 結語：林獻升老師的幾句叮嚀",
+      "key_points": [
+        "當一位調度者：主動管理你的數位工具箱，而非反過來被工具管理",
+        "養成「信任但查證」的習慣：凡是價格、時間、地址等關鍵資訊，自己安全網",
+        "建立個人旅行知識庫：把值得信任的攻略存入 NotebookLM，轉化為個人化旅行資產"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 結語：林獻升老師的幾句叮嚀"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 69,
+      "title": "附錄：AI 輔助自助旅行工具速查表",
+      "role": "summary",
+      "intent": "Explain the concepts related to 附錄：AI 輔助自助旅行工具速查表",
+      "key_points": [
+        "橫軸：六個旅行環節",
+        "縱軸：AI 發散工具 (LLM、AI 搜尋、生圖、NotebookLM) 與 傳統落地 App",
+        "提供快速對照與課堂投影展示"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 附錄：AI 輔助自助旅行工具速查表"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    },
+    {
+      "number": 70,
+      "title": "附錄：林獻升老師的生物與旅行詩作",
+      "role": "summary",
+      "intent": "Explain the concepts related to 附錄：林獻升老師的生物與旅行詩作",
+      "key_points": [
+        "詩作展示：",
+        "「樹蛙升歌夜色麗，蜓蜥華行映青山」",
+        "「蛺蝶偉姿飛影高，紅葉楓情秋意中」",
+        "境界詮釋：從探尋繽紛的生物，到編織一趟幸福的旅程，都是帶著好奇與對世界的敬意出發"
+      ],
+      "layout": {
+        "composition": "title at top left, main points in cards or list, minimalist travel vector art decoration",
+        "relationship_to_previous_slide": "sequential story flow"
+      },
+      "visual_elements": {
+        "main_visual": "minimalist icon/metaphor illustrating 附錄：林獻升老師的生物與旅行詩作"
+      },
+      "constraints": [
+        "Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.",
+        "Render clean and legible Traditional Chinese text exactly, no spelling errors.",
+        "No slide numbers, no unrelated watermarks or logos.",
+        "Maintain professional layout with clear visual hierarchy."
+      ]
+    }
+  ]
+}

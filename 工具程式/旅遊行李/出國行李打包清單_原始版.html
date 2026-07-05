@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✈️ 出國行李打包清單</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 28px; color: white; }
+    header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    header p { margin-top: 8px; font-size: 1rem; opacity: 0.85; }
+    .progress-bar-wrap { background: rgba(255,255,255,0.25); border-radius: 50px; height: 12px; margin: 16px auto 0; max-width: 400px; overflow: hidden; }
+    .progress-bar { height: 100%; background: #fff; border-radius: 50px; transition: width 0.4s ease; width: 0%; }
+    .progress-label { color: white; font-size: 0.85rem; margin-top: 6px; opacity: 0.9; }
+    .controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+    .btn { padding: 8px 20px; border: none; border-radius: 50px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: all 0.2s; }
+    .btn-outline { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { background: rgba(255,255,255,0.3); }
+    .btn-white { background: white; color: #764ba2; }
+    .btn-white:hover { background: #f0e6ff; }
+    .section-card { background: white; border-radius: 20px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .section-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; cursor: pointer; user-select: none; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
+    .section-header:hover { background: #f4f0ff; }
+    .section-title { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: 700; color: #333; }
+    .section-emoji { font-size: 1.4rem; }
+    .section-badge { background: #764ba2; color: white; border-radius: 50px; padding: 2px 10px; font-size: 0.75rem; font-weight: 700; }
+    .section-badge.done { background: #48bb78; }
+    .section-toggle { color: #999; font-size: 1.2rem; transition: transform 0.3s; }
+    .section-toggle.open { transform: rotate(180deg); }
+    .items-list { padding: 12px 22px 18px; display: none; }
+    .items-list.open { display: block; }
+    .item { display: flex; align-items: center; gap: 12px; padding: 9px 4px; border-bottom: 1px solid #f5f5f5; cursor: pointer; border-radius: 8px; transition: background 0.15s; }
+    .item:last-child { border-bottom: none; }
+    .item:hover { background: #faf7ff; }
+    .item input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: #764ba2; flex-shrink: 0; }
+    .item-label { flex: 1; font-size: 0.95rem; color: #444; line-height: 1.4; cursor: pointer; }
+    .item.checked .item-label { text-decoration: line-through; color: #bbb; }
+    .item-note { font-size: 0.78rem; color: #aaa; margin-top: 2px; }
+    .item.important .item-label::before { content: "⚡"; margin-right: 4px; }
+    footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 20px; padding-bottom: 16px; }
+    @media (max-width: 500px) {
+      header h1 { font-size: 1.6rem; }
+      .section-header { padding: 14px 16px; }
+      .items-list { padding: 10px 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>✈️ 出國行李打包清單</h1>
+    <p>逐一勾選，確保不漏帶任何重要物品</p>
+    <p style="margin-top:10px;font-size:0.85rem;opacity:0.75;letter-spacing:0.5px;">
+      臺北市立麗山高中 生物科 林獻升老師製作｜<a href="mailto:frog@lssh.tp.edu.tw" style="color:rgba(255,255,255,0.85);text-decoration:underline;">frog@lssh.tp.edu.tw</a>
+    </p>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <p class="progress-label" id="progressLabel">已完成 0 / 0 項</p>
+  </header>
+  <div class="controls">
+    <button class="btn btn-outline" onclick="expandAll()">展開全部</button>
+    <button class="btn btn-outline" onclick="collapseAll()">收合全部</button>
+    <button class="btn btn-white" onclick="resetAll()">🔄 重設清單</button>
+  </div>
+  <div id="checklist"></div>
+  <footer>旅途平安，一切順利！🌏</footer>
+</div>
+
+<script>
+const data = [
+  {
+    emoji: "🪪", title: "重要證件",
+    items: [
+      { label: "護照", note: "確認有效期限距出發日起至少 6 個月", important: true },
+      { label: "簽證", note: "紙本或電子簽，視目的地而定", important: true },
+      { label: "機票訂位確認單（電子或紙本）", important: true },
+      { label: "住宿訂房確認單", important: true },
+      { label: "旅遊保險證明", important: true },
+      { label: "國際駕照", note: "若需租車使用" },
+      { label: "駕照日文譯本", note: "赴日自駕必備，可向監理所申請" },
+      { label: "台胞證", note: "前往中國大陸時使用" },
+      { label: "身分證 / 健保卡", note: "備用" },
+      { label: "緊急聯絡人資訊（紙本備份）" },
+      { label: "大頭照 2 張", note: "辦理臨時證件備用" },
+    ]
+  },
+  {
+    emoji: "💳", title: "財務相關",
+    items: [
+      { label: "信用卡（至少 2 張，不同發卡行）", important: true },
+      { label: "提款卡（確認海外提款功能開通）", important: true },
+      { label: "外幣現金（當地貨幣）", important: true },
+      { label: "備用現金（美金或歐元）" },
+      { label: "旅行支票", note: "視個人習慣" },
+      { label: "出國前通知銀行（避免刷卡遭鎖）", important: true },
+      { label: "記下信用卡掛失電話", note: "存手機備忘錄 + 紙本各一份" },
+    ]
+  },
+  {
+    emoji: "🎒", title: "行李箱 & 收納",
+    items: [
+      { label: "行李箱（確認尺寸符合航班規定）", important: true },
+      { label: "行李秤", note: "出發前量重量，避免超重費" },
+      { label: "TSA 海關鎖", important: true },
+      { label: "行李條（附姓名地址電話）" },
+      { label: "收納袋 / 壓縮袋", note: "依衣物、3C、盥洗等分類" },
+      { label: "髒衣袋" },
+      { label: "購物袋（可折疊）" },
+      { label: "雨傘 / 雨衣" },
+      { label: "旅行枕 / 眼罩 / 耳塞", note: "長途飛行必備" },
+      { label: "防水袋", note: "保護電子設備或海邊活動使用" },
+    ]
+  },
+  {
+    emoji: "👔", title: "衣物 & 鞋類",
+    items: [
+      { label: "上衣（依天數備份）", important: true },
+      { label: "褲子 / 裙子" },
+      { label: "內衣褲（多帶 1-2 套備用）" },
+      { label: "睡衣" },
+      { label: "保暖外套 / 風衣", note: "視目的地氣候調整" },
+      { label: "泳衣 / 泳褲", note: "若有海灘或溫泉行程" },
+      { label: "正式服裝", note: "商務出差或晚宴使用" },
+      { label: "舒適步行鞋（穿過磨合好的）" },
+      { label: "涼鞋 / 拖鞋" },
+      { label: "正式皮鞋", note: "視行程需要" },
+      { label: "帽子 / 墨鏡", note: "遮陽防曬" },
+      { label: "腰包 / 小側背包", note: "日常出遊輕便攜帶" },
+    ]
+  },
+  {
+    emoji: "🧴", title: "盥洗 & 美妝",
+    items: [
+      { label: "牙刷 + 牙膏（旅行尺寸）" },
+      { label: "洗髮精 + 潤髮乳（旅行瓶）" },
+      { label: "沐浴乳 / 肥皂" },
+      { label: "刮鬍刀 / 除毛刀" },
+      { label: "洗面乳 + 化妝水 + 乳液" },
+      { label: "防曬乳（SPF50+）", important: true },
+      { label: "口紅 / 彩妝品", note: "液態需 ≤100ml 且裝入夾鏈袋" },
+      { label: "香水 / 體香劑" },
+      { label: "棉棒 + 棉片" },
+      { label: "吹風機", note: "確認飯店是否提供，視情況攜帶" },
+      { label: "梳子 / 髮圈" },
+      { label: "衛生棉 / 棉條", note: "女性旅客備用" },
+      { label: "濕紙巾 / 酒精棉片" },
+      { label: "面膜", note: "飛機上保濕用" },
+    ]
+  },
+  {
+    emoji: "💊", title: "藥品 & 保健",
+    items: [
+      { label: "個人處方藥（備足天數）", note: "附英文診斷說明書或藥袋", important: true },
+      { label: "感冒藥" },
+      { label: "腸胃藥（止瀉、腸胃不適）" },
+      { label: "暈車 / 暈船藥" },
+      { label: "止痛退燒藥（普拿疼等）" },
+      { label: "外傷藥膏 + OK 繃" },
+      { label: "過敏藥（抗組織胺）" },
+      { label: "眼藥水" },
+      { label: "維生素 / 保健品" },
+      { label: "防蚊液 / 止癢膏", note: "熱帶地區必備" },
+      { label: "體溫計" },
+    ]
+  },
+  {
+    emoji: "📱", title: "電子設備 & 充電",
+    items: [
+      { label: "手機 + 充電線", important: true },
+      { label: "筆記型電腦 + 充電器", note: "若需辦公或展示使用" },
+      { label: "平板 + 充電器" },
+      { label: "行動電源（航空規定：100Wh 以下可帶上機）", important: true },
+      { label: "萬用旅行轉接插頭", important: true },
+      { label: "多孔 USB 充電器 / 充電頭" },
+      { label: "耳機（有線 + 無線備用）" },
+      { label: "旅行 SIM 卡 / eSIM（出發前設定好）", important: true, note: "確認目的地通訊方案" },
+      { label: "隨身碟（2 支以上）", note: "備份重要資料" },
+      { label: "延長線", note: "展場或飯店插座不足時使用" },
+    ]
+  },
+  {
+    emoji: "🏆", title: "競賽器材",
+    items: [
+      { label: "海報展板（含支撐架）", important: true, note: "確認主辦方是否提供展架" },
+      { label: "實驗器材 / 儀器設備", important: true },
+      { label: "簡報筆（雷射筆 / 無線翻頁筆）", important: true },
+      { label: "比賽檔案", note: "備份至隨身碟（2 支）＋雲端（Google Drive / OneDrive）", important: true },
+      { label: "報名確認函 / 參賽資格證明", important: true },
+      { label: "名片（個人 / 學校 / 指導老師）", note: "與評審、他校選手交流使用" },
+      { label: "隊服 / 正式比賽服裝", note: "確認規定是否需統一著裝" },
+      { label: "延長線 / 多孔插座", note: "展場插座有限，共用備用" },
+      { label: "備用電池 / 小型行動電源", note: "器材或簡報筆備用電力" },
+      { label: "展示架 / 桌布 / 支撐架", note: "確認主辦方是否提供" },
+      { label: "剪刀、雙面膠、便利貼、膠帶", note: "現場應急修復展板使用" },
+      { label: "計時器", note: "口頭發表練習計時用" },
+      { label: "白板筆 / 麥克筆（備用）" },
+      { label: "比賽規則手冊 / 注意事項（紙本備份）" },
+      { label: "授權同意書 / 倫理審查文件", note: "若研究涉及人體或動物實驗" },
+    ]
+  },
+  {
+    emoji: "🤝", title: "交流活動",
+    items: [
+      { label: "紀念品（台灣特色小物）", important: true },
+      { label: "伴手禮", note: "鳳梨酥、茶葉、牛軋糖等台灣特產" },
+      { label: "學校介紹資料（手冊、DM、宣傳品）", important: true },
+      { label: "校旗 / 校徽 / 胸章", important: true },
+      { label: "名片（中英文版，含 QR Code）", note: "方便與外國學生 / 老師快速交換聯絡方式" },
+      { label: "感謝卡 / 致謝函", note: "事先準備，於交流結束時致贈" },
+      { label: "隊服 / 學校制服", note: "團體合照時統一形象" },
+      { label: "台灣文化介紹小冊子（中英對照）" },
+      { label: "社群帳號 QR Code 卡片", note: "IG / LINE / Facebook 等" },
+      { label: "合照道具 / 小旗幟", note: "團體照增添活潑氛圍" },
+      { label: "小包裝台灣零食（交流分享用）", note: "乖乖、旺旺、台灣餅乾等" },
+      { label: "中英文自我介紹稿（備用）", note: "口語交流時的緊急備案" },
+    ]
+  },
+  {
+    emoji: "🏨", title: "住宿 & 交通",
+    items: [
+      { label: "飯店地址（中文 + 當地語言版本）", important: true },
+      { label: "飯店訂房確認單（含 Check-in / Check-out 時間）", important: true },
+      { label: "機場 ↔ 飯店交通方式確認", important: true },
+      { label: "當地大眾運輸票卡（如 IC Card、Suica、Octopus）" },
+      { label: "租車確認單 + 取車位置", note: "若需自駕" },
+      { label: "各地點間交通時刻表備忘", note: "下載離線版或截圖備用" },
+      { label: "Uber / Grab / 當地計程車 App 安裝" },
+      { label: "行程表（附地址、電話、開放時間）" },
+      { label: "重要場館地圖截圖（可離線查看）" },
+    ]
+  },
+  {
+    emoji: "📸", title: "影像紀錄",
+    items: [
+      { label: "相機 / GoPro + 充電器" },
+      { label: "記憶卡（多備一張）", note: "建議 64GB 以上" },
+      { label: "腳架 / 自拍棒" },
+      { label: "額外備用電池", note: "相機電池耗電快" },
+      { label: "讀卡機", note: "快速備份照片到筆電" },
+      { label: "防水袋 / 防撞包", note: "保護相機設備" },
+      { label: "雲端備份確認（iCloud / Google Photos 開啟自動上傳）" },
+      { label: "空拍機 + 充電器", note: "確認目的地法規是否允許飛行" },
+    ]
+  },
+  {
+    emoji: "🛡️", title: "安全 & 緊急應對",
+    items: [
+      { label: "台灣駐外辦事處電話與地址", important: true, note: "出事時第一時間聯絡" },
+      { label: "旅遊保險緊急聯絡電話", important: true },
+      { label: "護照影本 + 電子版（存雲端）", important: true },
+      { label: "信用卡掛失電話（抄在紙上備用）" },
+      { label: "當地報警 / 急救電話確認", note: "如日本 110 / 119，美國 911" },
+      { label: "緊急醫療翻譯卡（列出過敏、血型、病史）", note: "建議中英對照" },
+      { label: "行動電源（保持手機電量充足）" },
+      { label: "口哨 / 防身噴霧", note: "視目的地治安決定是否攜帶" },
+      { label: "備用現金（小額分開放置）", note: "錢包遺失時的緊急備用金" },
+      { label: "行程與住宿資訊副本（交給國內緊急聯絡人）" },
+    ]
+  },
+  {
+    emoji: "📋", title: "出發前 24 小時最終確認",
+    items: [
+      { label: "【證件】護照確認：有效期 6 個月以上，簽證已夾入", important: true },
+      { label: "【證件】機票訂位確認單、住宿訂房確認單已列印或截圖備妥", important: true },
+      { label: "【證件】旅遊保險證明已列印，緊急電話已存入手機", important: true },
+      { label: "【證件】護照影本已存雲端（Google Drive / iCloud）並列印紙本放另一處" },
+      { label: "【證件】台胞證 / 駕照日文譯本（視目的地確認是否需要）" },
+      { label: "【財務】已通知各銀行出國時間，避免卡片遭鎖", important: true },
+      { label: "【財務】外幣現金已準備，信用卡至少 2 張分開存放" },
+      { label: "【財務】信用卡掛失電話已抄在手機備忘錄或紙上" },
+      { label: "【行李】行李重量已秤量，符合航班免費託運限額", important: true },
+      { label: "【行李】手提行李液體類已放入防漏袋，每瓶 ≤100ml" },
+      { label: "【行李】行李箱鎖好（TSA 海關鎖），行李條姓名地址已填妥" },
+      { label: "【行李】收納袋 / 壓縮袋 / 髒衣袋分區整理完畢" },
+      { label: "【行李】購物袋、雨傘、旅行枕等最後備品已放入" },
+      { label: "【衣物】依當地天氣調整衣物數量（確認天氣預報）" },
+      { label: "【衣物】隊服 / 比賽服裝 / 正式服裝已確認打包" },
+      { label: "【藥品】個人處方藥已備足天數，附英文診斷說明", important: true },
+      { label: "【藥品】常備藥（感冒、腸胃、止痛）已打包" },
+      { label: "【電子】手機、筆電、相機、行動電源均已充滿電", important: true },
+      { label: "【電子】萬用轉接插頭、所有充電線已確認放入" },
+      { label: "【電子】旅行 SIM 卡 / eSIM 已設定並測試可用", important: true },
+      { label: "【電子】離線地圖（Google Maps）、翻譯 App 離線語言包已下載" },
+      { label: "【電子】當地交通 App（Uber / Grab / 電車 App）已安裝" },
+      { label: "【競賽】比賽檔案已備份至 2 支隨身碟 + 雲端", important: true },
+      { label: "【競賽】海報展板、器材儀器已確認打包或託運安排" },
+      { label: "【競賽】報名確認函、參賽資格證明、比賽規則手冊已備妥" },
+      { label: "【競賽】簡報筆、指揮棒、延長線、應急文具（膠帶、剪刀）已打包" },
+      { label: "【競賽】名片已帶，隊服已確認穿著方式" },
+      { label: "【交流】伴手禮 / 紀念品已打包並確認數量足夠", important: true },
+      { label: "【交流】校旗、校徽、學校介紹手冊已備妥" },
+      { label: "【交流】感謝卡、名片、QR Code 卡片已帶" },
+      { label: "【住宿】飯店地址（當地語言版）已存入手機 + 紙本備份" },
+      { label: "【住宿】機場到飯店的交通路線已確認（含備用方案）" },
+      { label: "【住宿】重要場館地圖截圖已儲存（可離線查看）" },
+      { label: "【影像】記憶卡已清空或備妥足夠容量，雲端自動備份已開啟" },
+      { label: "【安全】台灣駐外辦事處電話已存入手機聯絡人", important: true },
+      { label: "【安全】緊急醫療翻譯卡（血型、過敏、病史）已帶" },
+      { label: "【安全】備用現金已分開存放（包包、行李箱各一份）" },
+      { label: "【居家】家人 / 親友已知悉完整行程與緊急聯絡方式", important: true },
+      { label: "【居家】寵物已安排妥善照顧，飼料備量足夠" },
+      { label: "【居家】家中門窗、瓦斯、電器（尤其電熱水器）已確認關閉" },
+      { label: "【居家】冰箱易腐食物已處理，飲水機已關閉" },
+      { label: "【居家】備用鑰匙已交給鄰居 / 家人" },
+      { label: "【居家】重要郵件 / 包裹已請人代收或暫停投遞" },
+    ]
+  },
+];
+
+// In-memory state (no localStorage in artifact env)
+const checkState = {};
+
+function buildChecklist() {
+  const container = document.getElementById("checklist");
+  container.innerHTML = "";
+  data.forEach((section, si) => {
+    const card = document.createElement("div");
+    card.className = "section-card";
+    const header = document.createElement("div");
+    header.className = "section-header";
+    header.innerHTML = `
+      <div class="section-title">
+        <span class="section-emoji">${section.emoji}</span>
+        <span>${section.title}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="section-badge" id="badge-${si}">0 / ${section.items.length}</span>
+        <span class="section-toggle open" id="toggle-${si}">▼</span>
+      </div>
+    `;
+    const list = document.createElement("div");
+    list.className = "items-list open";
+    list.id = `list-${si}`;
+    section.items.forEach((item, ii) => {
+      const id = `item-${si}-${ii}`;
+      const row = document.createElement("div");
+      row.className = "item" + (item.important ? " important" : "");
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.id = id;
+      cb.dataset.section = si;
+      if (checkState[id]) { cb.checked = true; row.classList.add("checked"); }
+      const labelWrap = document.createElement("label");
+      labelWrap.className = "item-label";
+      labelWrap.htmlFor = id;
+      labelWrap.innerHTML = item.label + (item.note ? `<div class="item-note">${item.note}</div>` : "");
+      cb.addEventListener("change", () => {
+        checkState[id] = cb.checked;
+        row.classList.toggle("checked", cb.checked);
+        updateProgress();
+      });
+      row.appendChild(cb);
+      row.appendChild(labelWrap);
+      list.appendChild(row);
+    });
+    header.addEventListener("click", () => {
+      const isOpen = list.classList.toggle("open");
+      document.getElementById(`toggle-${si}`).classList.toggle("open", isOpen);
+    });
+    card.appendChild(header);
+    card.appendChild(list);
+    container.appendChild(card);
+  });
+  updateProgress();
+}
+
+function updateProgress() {
+  const all = document.querySelectorAll(".items-list input[type=checkbox]");
+  const done = document.querySelectorAll(".items-list input[type=checkbox]:checked");
+  const pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+  document.getElementById("progressBar").style.width = pct + "%";
+  document.getElementById("progressLabel").textContent = `已完成 ${done.length} / ${all.length} 項（${pct}%）`;
+  data.forEach((section, si) => {
+    const sAll = document.querySelectorAll(`input[data-section="${si}"]`);
+    const sDone = document.querySelectorAll(`input[data-section="${si}"]:checked`);
+    const badge = document.getElementById(`badge-${si}`);
+    if (!badge) return;
+    badge.textContent = `${sDone.length} / ${sAll.length}`;
+    badge.className = (sDone.length === sAll.length && sAll.length > 0) ? "section-badge done" : "section-badge";
+  });
+}
+
+function resetAll() {
+  if (!confirm("確定要重設所有勾選項目嗎？")) return;
+  Object.keys(checkState).forEach(k => delete checkState[k]);
+  document.querySelectorAll(".items-list input[type=checkbox]").forEach(cb => {
+    cb.checked = false;
+    cb.closest(".item").classList.remove("checked");
+  });
+  updateProgress();
+}
+
+function expandAll() {
+  document.querySelectorAll(".items-list").forEach((el, i) => {
+    el.classList.add("open");
+    const t = document.getElementById(`toggle-${i}`);
+    if (t) t.classList.add("open");
+  });
+}
+
+function collapseAll() {
+  document.querySelectorAll(".items-list").forEach((el, i) => {
+    el.classList.remove("open");
+    const t = document.getElementById(`toggle-${i}`);
+    if (t) t.classList.remove("open");
+  });
+}
+
+buildChecklist();
+</script>
+</body>
+</html>

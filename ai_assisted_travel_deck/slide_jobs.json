@@ -1,0 +1,2942 @@
+{
+  "run_status": "slides_recorded",
+  "deck_name": "ai_assisted_travel_deck",
+  "selected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "the approved sample slide job prompt",
+    "size": "16:9 landscape, 2048x1152 target",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "max_concurrent_slides": 6,
+  "slides": [
+    {
+      "slide_id": "slide_01",
+      "number": 1,
+      "title": "AI 輔助自助旅行：從規劃到記錄的數位工具全解析",
+      "job": "prompts/slide_01.json",
+      "out": "origin_image/slide_01.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "d5731c91-fd17-435d-bdb2-44250629e252",
+        "agent_nickname": "Slide 01 Generator",
+        "prompt": "prompts/slide_01.json",
+        "prompt_sha256": "12b27813a9ead96ce2893732d86b5a1dc2ec015e3ed13b92a119e851e577d74e",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "d5731c91-fd17-435d-bdb2-44250629e252",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_01_candidate.png",
+        "selected_source_sha256": "d080fd2fc8fd9d4a5b48d227f86c8cc0abc5c6b5497d0f61a9b633973956feec",
+        "final_image": "origin_image/slide_01.png",
+        "final_image_sha256": "d080fd2fc8fd9d4a5b48d227f86c8cc0abc5c6b5497d0f61a9b633973956feec",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:06:14Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_02",
+      "number": 2,
+      "title": "研習講義使用與導覽說明",
+      "job": "prompts/slide_02.json",
+      "out": "origin_image/slide_02.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "b015ad48-e2ad-488a-b45e-88a12667c29e",
+        "agent_nickname": "Slide 02 Generator",
+        "prompt": "prompts/slide_02.json",
+        "prompt_sha256": "9055608be8066c470c0124159e9be8cb86c6daf258b38c2a67e5424590b9fdb7",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "b015ad48-e2ad-488a-b45e-88a12667c29e",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_02_candidate.png",
+        "selected_source_sha256": "d2abf87dc2d8bb110d49404d04b253d419ed7208dabd5d79ce0ab51269ffd829",
+        "final_image": "origin_image/slide_02.png",
+        "final_image_sha256": "d2abf87dc2d8bb110d49404d04b253d419ed7208dabd5d79ce0ab51269ffd829",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:06:07Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_03",
+      "number": 3,
+      "title": "前言：為什麼要談 AI 輔助自助旅行",
+      "job": "prompts/slide_03.json",
+      "out": "origin_image/slide_03.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "f577b916-0626-4aba-a646-98a838b988e6",
+        "agent_nickname": "Slide 03 Generator",
+        "prompt": "prompts/slide_03.json",
+        "prompt_sha256": "2aa51af705a0bdd7dbc9a419eaaf83198eb33c27a21b7227cf35fbc3b0a75e60",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "f577b916-0626-4aba-a646-98a838b988e6",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_03_candidate.png",
+        "selected_source_sha256": "55c1c8d7367defd7b57302bf1b12f499aadf05e72c8545da6a52ff753f47ffef",
+        "final_image": "origin_image/slide_03.png",
+        "final_image_sha256": "55c1c8d7367defd7b57302bf1b12f499aadf05e72c8545da6a52ff753f47ffef",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:06:25Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_04",
+      "number": 4,
+      "title": "傳統自助旅行規劃的痛點",
+      "job": "prompts/slide_04.json",
+      "out": "origin_image/slide_04.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "5d29fa65-9360-4609-a7aa-a18a39ae6e3f",
+        "agent_nickname": "Slide 04 Generator",
+        "prompt": "prompts/slide_04.json",
+        "prompt_sha256": "9fbae406549d232e0649118783a87d43b5dc42165bc2d8c906a307cfec0819d0",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "5d29fa65-9360-4609-a7aa-a18a39ae6e3f",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_04_candidate.png",
+        "selected_source_sha256": "87c0826db2c36216e9cb8de1f0a4f6b8dfa569f3edb22b73932399bcff6f59ce",
+        "final_image": "origin_image/slide_04.png",
+        "final_image_sha256": "87c0826db2c36216e9cb8de1f0a4f6b8dfa569f3edb22b73932399bcff6f59ce",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:06:20Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_05",
+      "number": 5,
+      "title": "第一部：建立觀念 — 六個環節與混合式工具箱",
+      "job": "prompts/slide_05.json",
+      "out": "origin_image/slide_05.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "c95db8d5-be47-4e1c-a22b-19565ba924a1",
+        "agent_nickname": "Slide 05 Generator",
+        "prompt": "prompts/slide_05.json",
+        "prompt_sha256": "4b836d112ca8e6dd211a96d81e5408b529d68d1a162f7f52d6638a4c5fc00c18",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "c95db8d5-be47-4e1c-a22b-19565ba924a1",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_05_candidate.png",
+        "selected_source_sha256": "9c355392b9cc04032ab58ce7e72af6b2f15d60d3ffd40eb3c1bc10e00f5dd030",
+        "final_image": "origin_image/slide_05.png",
+        "final_image_sha256": "9c355392b9cc04032ab58ce7e72af6b2f15d60d3ffd40eb3c1bc10e00f5dd030",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:06:05Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_06",
+      "number": 6,
+      "title": "數位化旅行的最新趨勢數據",
+      "job": "prompts/slide_06.json",
+      "out": "origin_image/slide_06.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "091bd69f-7da3-4ab1-a035-803e916d9737",
+        "agent_nickname": "Slide 06 Generator",
+        "prompt": "prompts/slide_06.json",
+        "prompt_sha256": "4559c9c3af48b85be94a73cff60af957db64be49c22e0f65d8506f0bde407aed",
+        "dispatched_at": "2026-07-05T04:04:54Z"
+      },
+      "result": {
+        "agent_id": "091bd69f-7da3-4ab1-a035-803e916d9737",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_06_candidate.png",
+        "selected_source_sha256": "15b3eab18d8178897ecded5aa46fc85349870340d9d20c82fb5a43324c119f28",
+        "final_image": "origin_image/slide_06.png",
+        "final_image_sha256": "15b3eab18d8178897ecded5aa46fc85349870340d9d20c82fb5a43324c119f28",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:05:59Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_07",
+      "number": 7,
+      "title": "生成式 AI 與代理型 AI 的本質區別",
+      "job": "prompts/slide_07.json",
+      "out": "origin_image/slide_07.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "84a4e2fb-f974-4f34-9868-1b2f8e98f3f2",
+        "agent_nickname": "Slide 07 Generator",
+        "prompt": "prompts/slide_07.json",
+        "prompt_sha256": "fc978df290f5a91822c57202af6b7d790de937eba4ae212c6585cfc7dc2e0e79",
+        "dispatched_at": "2026-07-05T04:06:03Z"
+      },
+      "result": {
+        "agent_id": "84a4e2fb-f974-4f34-9868-1b2f8e98f3f2",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_07_candidate.png",
+        "selected_source_sha256": "1ec3fc433e4ed36f8e38bfad684861034f5fb2ec22c8df311bda2485f0864dfa",
+        "final_image": "origin_image/slide_07.png",
+        "final_image_sha256": "1ec3fc433e4ed36f8e38bfad684861034f5fb2ec22c8df311bda2485f0864dfa",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:07:39Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_08",
+      "number": 8,
+      "title": "什麼是代理洗綠 (Agentwashing)？",
+      "job": "prompts/slide_08.json",
+      "out": "origin_image/slide_08.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0cf940d7-335f-41b4-8479-fbc31241930d",
+        "agent_nickname": "Slide 08 Generator",
+        "prompt": "prompts/slide_08.json",
+        "prompt_sha256": "28c5868ed4d0405fcc0f7d3040113b37a4f3e0ea985c2d85809532281f3589e0",
+        "dispatched_at": "2026-07-05T04:06:12Z"
+      },
+      "result": {
+        "agent_id": "0cf940d7-335f-41b4-8479-fbc31241930d",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_08_candidate.png",
+        "selected_source_sha256": "379a1e27a2278a06d64b4525c37263222816236bea57a754dda67b2c5959d294",
+        "final_image": "origin_image/slide_08.png",
+        "final_image_sha256": "379a1e27a2278a06d64b4525c37263222816236bea57a754dda67b2c5959d294",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:07:23Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_09",
+      "number": 9,
+      "title": "自助旅行的六個環節架構",
+      "job": "prompts/slide_09.json",
+      "out": "origin_image/slide_09.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "94886b50-3e58-4a27-aba4-f976f1f7f60c",
+        "agent_nickname": "Slide 09 Generator",
+        "prompt": "prompts/slide_09.json",
+        "prompt_sha256": "685882ac2dcc35b9afd62db558bed51dd069723700b48ca83323770918e7ec84",
+        "dispatched_at": "2026-07-05T04:06:12Z"
+      },
+      "result": {
+        "agent_id": "94886b50-3e58-4a27-aba4-f976f1f7f60c",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_09_candidate.png",
+        "selected_source_sha256": "c73392342fbe2aeb5e3a055ad89a7b8f1cae774b1037a7daa9f8e3da9d6b9b9b",
+        "final_image": "origin_image/slide_09.png",
+        "final_image_sha256": "c73392342fbe2aeb5e3a055ad89a7b8f1cae774b1037a7daa9f8e3da9d6b9b9b",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:07:31Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_10",
+      "number": 10,
+      "title": "環節 ① · 前期規劃 (Pre-planning)",
+      "job": "prompts/slide_10.json",
+      "out": "origin_image/slide_10.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "83135b03-9c44-4f41-84a4-2b15c4b7cd4a",
+        "agent_nickname": "Slide 10 Generator",
+        "prompt": "prompts/slide_10.json",
+        "prompt_sha256": "03cdeb9d06d9a913b3bf494b78914196bdd46a9dd665b2665d2ad510f2a314e2",
+        "dispatched_at": "2026-07-05T04:06:18Z"
+      },
+      "result": {
+        "agent_id": "83135b03-9c44-4f41-84a4-2b15c4b7cd4a",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_10_candidate.png",
+        "selected_source_sha256": "562f1b466a2ff628e65492af0d926875ff3059282877bc12740462946164fb88",
+        "final_image": "origin_image/slide_10.png",
+        "final_image_sha256": "562f1b466a2ff628e65492af0d926875ff3059282877bc12740462946164fb88",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:08:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_11",
+      "number": 11,
+      "title": "環節 ② · 資訊蒐集 (Information Gathering)",
+      "job": "prompts/slide_11.json",
+      "out": "origin_image/slide_11.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "567fd060-3a7a-4a92-a88c-64b22f8d7ff8",
+        "agent_nickname": "Slide 11 Generator",
+        "prompt": "prompts/slide_11.json",
+        "prompt_sha256": "9c24c7f26f6f1cb84cc5e9bff4f255ce3c2445b15da6befea224cb5573a1de4b",
+        "dispatched_at": "2026-07-05T04:06:23Z"
+      },
+      "result": {
+        "agent_id": "567fd060-3a7a-4a92-a88c-64b22f8d7ff8",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_11_candidate.png",
+        "selected_source_sha256": "dd5bf20744dd1bd7d494bcd840d9ec91f915926150bdb4eb537955d8d9501a60",
+        "final_image": "origin_image/slide_11.png",
+        "final_image_sha256": "dd5bf20744dd1bd7d494bcd840d9ec91f915926150bdb4eb537955d8d9501a60",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T07:57:16Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_12",
+      "number": 12,
+      "title": "環節 ③ · 行程設計 (Itinerary Design)",
+      "job": "prompts/slide_12.json",
+      "out": "origin_image/slide_12.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "784b4b27-daf4-4878-bb2d-0a05cea053f2",
+        "agent_nickname": "Slide 12 Generator",
+        "prompt": "prompts/slide_12.json",
+        "prompt_sha256": "c1a23321a961c3bed6797d72cf8d116eadc14ba543df4a91b935e0430ab85e9f",
+        "dispatched_at": "2026-07-05T04:06:30Z"
+      },
+      "result": {
+        "agent_id": "784b4b27-daf4-4878-bb2d-0a05cea053f2",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_12_candidate.png",
+        "selected_source_sha256": "d5d6ae679e5b721f3456f6b386aa8827aca84302104774d8eed54c079733e03c",
+        "final_image": "origin_image/slide_12.png",
+        "final_image_sha256": "d5d6ae679e5b721f3456f6b386aa8827aca84302104774d8eed54c079733e03c",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:07:45Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_13",
+      "number": 13,
+      "title": "環節 ④ · 語言翻譯 (Language Translation)",
+      "job": "prompts/slide_13.json",
+      "out": "origin_image/slide_13.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "76a8b955-8eb8-43fa-bc68-8906889eb7ce",
+        "agent_nickname": "Slide 13 Generator",
+        "prompt": "prompts/slide_13.json",
+        "prompt_sha256": "23a9653b4c08c7775f4d458f0d895d279171e8727a1cf6abb464ebce00f01dd9",
+        "dispatched_at": "2026-07-05T04:07:28Z"
+      },
+      "result": {
+        "agent_id": "76a8b955-8eb8-43fa-bc68-8906889eb7ce",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_13_candidate.png",
+        "selected_source_sha256": "2ae2c8c17ff9df97eee8a72d9c0b3e0406d394c6db56ad8cc1862291513de910",
+        "final_image": "origin_image/slide_13.png",
+        "final_image_sha256": "2ae2c8c17ff9df97eee8a72d9c0b3e0406d394c6db56ad8cc1862291513de910",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:09:08Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_14",
+      "number": 14,
+      "title": "環節 ⑤ · 即時導航 (Real-time Navigation)",
+      "job": "prompts/slide_14.json",
+      "out": "origin_image/slide_14.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "4cde5c0d-caac-41b3-9d55-b3d66a856d4f",
+        "agent_nickname": "Slide 14 Generator",
+        "prompt": "prompts/slide_14.json",
+        "prompt_sha256": "d4f20eae8b4fa1cb7bf52b43ef0c2d6468ee65a49676fddae64c63b61a2e8298",
+        "dispatched_at": "2026-07-05T04:07:35Z"
+      },
+      "result": {
+        "agent_id": "4cde5c0d-caac-41b3-9d55-b3d66a856d4f",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_14_candidate.png",
+        "selected_source_sha256": "2acb1afbb22d56bc160a638e60080d7a6cf764c1a6f5356cff3d2b5fffa14c1e",
+        "final_image": "origin_image/slide_14.png",
+        "final_image_sha256": "2acb1afbb22d56bc160a638e60080d7a6cf764c1a6f5356cff3d2b5fffa14c1e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:09:15Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_15",
+      "number": 15,
+      "title": "環節 ⑥ · 行中調整與紀錄 (In-trip Adjustment & Recording)",
+      "job": "prompts/slide_15.json",
+      "out": "origin_image/slide_15.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "12788c16-00d7-4751-9a71-3d96d919c6a1",
+        "agent_nickname": "Slide 15 Generator",
+        "prompt": "prompts/slide_15.json",
+        "prompt_sha256": "1e8cf6920e9129799c5e84b3a39f104bcd7fc497b5deeff04b581eefad29e644",
+        "dispatched_at": "2026-07-05T04:07:43Z"
+      },
+      "result": {
+        "agent_id": "12788c16-00d7-4751-9a71-3d96d919c6a1",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_15_candidate.png",
+        "selected_source_sha256": "fc65c3001d532a9436c5d36fe0b7be83d1369ba04c18a53f462265423476c445",
+        "final_image": "origin_image/slide_15.png",
+        "final_image_sha256": "fc65c3001d532a9436c5d36fe0b7be83d1369ba04c18a53f462265423476c445",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:09:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_16",
+      "number": 16,
+      "title": "自助旅行規劃的黃金鐵三角",
+      "job": "prompts/slide_16.json",
+      "out": "origin_image/slide_16.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "accepted",
+      "dispatch": null,
+      "result": {
+        "final_image": "origin_image/slide_16.png",
+        "accepted_sample": true
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_17",
+      "number": 17,
+      "title": "核心心法：信任，但要查證 (Trust but Verify)",
+      "job": "prompts/slide_17.json",
+      "out": "origin_image/slide_17.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0f34835d-8d0f-4e97-b476-13288da2302f",
+        "agent_nickname": "Slide 17 Generator",
+        "prompt": "prompts/slide_17.json",
+        "prompt_sha256": "adbde48a817c277c2f9b282fa75ba450a2223f0c223540d1b512eb35a94707c1",
+        "dispatched_at": "2026-07-05T04:07:48Z"
+      },
+      "result": {
+        "agent_id": "0f34835d-8d0f-4e97-b476-13288da2302f",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_17_candidate.png",
+        "selected_source_sha256": "e59a6896fe99856d3136c687ae44fda7ef6968803c1f7d60731d50eb5af54317",
+        "final_image": "origin_image/slide_17.png",
+        "final_image_sha256": "e59a6896fe99856d3136c687ae44fda7ef6968803c1f7d60731d50eb5af54317",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:09:17Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_18",
+      "number": 18,
+      "title": "提問的三個漸進層次",
+      "job": "prompts/slide_18.json",
+      "out": "origin_image/slide_18.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "e0a1498a-a23d-4ef1-9945-ae179626b1e0",
+        "agent_nickname": "Slide 18 Generator",
+        "prompt": "prompts/slide_18.json",
+        "prompt_sha256": "64b6edb102876c60d399070c9bd70f95573a56ba6fbf98d9b619a6ce54eb1b28",
+        "dispatched_at": "2026-07-05T04:08:56Z"
+      },
+      "result": {
+        "agent_id": "e0a1498a-a23d-4ef1-9945-ae179626b1e0",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_18_candidate.png",
+        "selected_source_sha256": "e972ed36bfa1222eed550a4e3764551b18cf3c57ccab02ff4f27b75aa6dfc1e8",
+        "final_image": "origin_image/slide_18.png",
+        "final_image_sha256": "e972ed36bfa1222eed550a4e3764551b18cf3c57ccab02ff4f27b75aa6dfc1e8",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:10:25Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_19",
+      "number": 19,
+      "title": "第一層提問：R-C-F-O-T 結構化框架",
+      "job": "prompts/slide_19.json",
+      "out": "origin_image/slide_19.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "b982f8e3-935f-403a-9acd-bd47585c7e88",
+        "agent_nickname": "Slide 19 Generator",
+        "prompt": "prompts/slide_19.json",
+        "prompt_sha256": "d6aa5229944f785f85da95dc2074195350e882c05de7419d40c3fb3c49629e02",
+        "dispatched_at": "2026-07-05T04:09:11Z"
+      },
+      "result": {
+        "agent_id": "b982f8e3-935f-403a-9acd-bd47585c7e88",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_19_candidate.png",
+        "selected_source_sha256": "2df589b63d16ae146d602c2dc7bc7c0fe24afac229c59a8d9872fd9dda368c25",
+        "final_image": "origin_image/slide_19.png",
+        "final_image_sha256": "2df589b63d16ae146d602c2dc7bc7c0fe24afac229c59a8d9872fd9dda368c25",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:12:33Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_20",
+      "number": 20,
+      "title": "第二層提問：引導 AI 反向詢問偏好",
+      "job": "prompts/slide_20.json",
+      "out": "origin_image/slide_20.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "3ac8c936-1d0f-4e38-9654-2b610afde362",
+        "agent_nickname": "Slide 20 Generator",
+        "prompt": "prompts/slide_20.json",
+        "prompt_sha256": "8ac9527e402d92ab8172f73c4aaa81a38f17b64804416fe22f18be7de5654b27",
+        "dispatched_at": "2026-07-05T04:09:23Z"
+      },
+      "result": {
+        "agent_id": "3ac8c936-1d0f-4e38-9654-2b610afde362",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_20_candidate.png",
+        "selected_source_sha256": "816d5f211be6dd064f1fbcc2ed6e075f6c495aa350b0572793d40609d7abbfd0",
+        "final_image": "origin_image/slide_20.png",
+        "final_image_sha256": "816d5f211be6dd064f1fbcc2ed6e075f6c495aa350b0572793d40609d7abbfd0",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:10:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_21",
+      "number": 21,
+      "title": "第三層提問：蘇格拉底式追問磨行程",
+      "job": "prompts/slide_21.json",
+      "out": "origin_image/slide_21.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "c39006a5-fa20-4702-b3e7-68f63e4da858",
+        "agent_nickname": "Slide 21 Generator",
+        "prompt": "prompts/slide_21.json",
+        "prompt_sha256": "a1f5d66c932bdb5e205817e4be8495b397adcb0b91a276ac0323bf2e6f7c4d60",
+        "dispatched_at": "2026-07-05T04:09:23Z"
+      },
+      "result": {
+        "agent_id": "c39006a5-fa20-4702-b3e7-68f63e4da858",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_21_candidate.png",
+        "selected_source_sha256": "debad74a793a33fd544b4195cbd916c4ebe5099d6571d6026ec5749211a907de",
+        "final_image": "origin_image/slide_21.png",
+        "final_image_sha256": "debad74a793a33fd544b4195cbd916c4ebe5099d6571d6026ec5749211a907de",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:10:55Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_22",
+      "number": 22,
+      "title": "第二部：工具巡禮 — 各式 AI 程式與實際應用",
+      "job": "prompts/slide_22.json",
+      "out": "origin_image/slide_22.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "d0169132-cd05-4262-b3ba-bf44b787b505",
+        "agent_nickname": "Slide 22 Generator",
+        "prompt": "prompts/slide_22.json",
+        "prompt_sha256": "b9dfbbf4ba977938681b1ead32210223e19088f673322a5a8aba9a9b483e4f2a",
+        "dispatched_at": "2026-07-05T04:09:24Z"
+      },
+      "result": {
+        "agent_id": "d0169132-cd05-4262-b3ba-bf44b787b505",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_22_candidate.png",
+        "selected_source_sha256": "425016796fd5a353cd79c6f5cfae4a94159822b95918d5ba4e54971d045e16f4",
+        "final_image": "origin_image/slide_22.png",
+        "final_image_sha256": "425016796fd5a353cd79c6f5cfae4a94159822b95918d5ba4e54971d045e16f4",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:11:30Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_23",
+      "number": 23,
+      "title": "生成式 LLM 三大主流模型",
+      "job": "prompts/slide_23.json",
+      "out": "origin_image/slide_23.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "a653cc4a-60f7-47d6-b700-7ae2e1b38805",
+        "agent_nickname": "Slide 23 Generator",
+        "prompt": "prompts/slide_23.json",
+        "prompt_sha256": "8480ad7b86c54222432e6d232a5b2c6a5a057e6cd4feb5ed4e12e6251908e318",
+        "dispatched_at": "2026-07-05T04:10:30Z"
+      },
+      "result": {
+        "agent_id": "a653cc4a-60f7-47d6-b700-7ae2e1b38805",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_23_candidate.png",
+        "selected_source_sha256": "6647ece355406b5ba2a1fc156219a9112cb811d0273679630bfe1cd63f2f28b3",
+        "final_image": "origin_image/slide_23.png",
+        "final_image_sha256": "6647ece355406b5ba2a1fc156219a9112cb811d0273679630bfe1cd63f2f28b3",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:13:05Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_24",
+      "number": 24,
+      "title": "三大模型在旅行中的最佳分工",
+      "job": "prompts/slide_24.json",
+      "out": "origin_image/slide_24.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "38ef89ab-adfc-4d22-a35b-9cd49a91c0b6",
+        "agent_nickname": "Slide 24 Generator",
+        "prompt": "prompts/slide_24.json",
+        "prompt_sha256": "0907d072df4d8433ba2f79a7d3898be1eeb700c38debb62ab19d925fd8e0a2fd",
+        "dispatched_at": "2026-07-05T04:11:00Z"
+      },
+      "result": {
+        "agent_id": "38ef89ab-adfc-4d22-a35b-9cd49a91c0b6",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_24_candidate.png",
+        "selected_source_sha256": "92f677da8dbadb7b4b459da0aecc2c9dc6aba51df0362edd183e834d97001cc7",
+        "final_image": "origin_image/slide_24.png",
+        "final_image_sha256": "92f677da8dbadb7b4b459da0aecc2c9dc6aba51df0362edd183e834d97001cc7",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:12:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_25",
+      "number": 25,
+      "title": "提示詞卡片：限制條件起手式 (R-C-F-O-T)",
+      "job": "prompts/slide_25.json",
+      "out": "origin_image/slide_25.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "b2eea7f8-7915-4f5e-9e28-bb2ed0804ffe",
+        "agent_nickname": "Slide 25 Generator",
+        "prompt": "prompts/slide_25.json",
+        "prompt_sha256": "aa992f5af3110a9c2287f769a174988a6c342b80d4366d79b2c68234bd8b51e7",
+        "dispatched_at": "2026-07-05T04:11:01Z"
+      },
+      "result": {
+        "agent_id": "b2eea7f8-7915-4f5e-9e28-bb2ed0804ffe",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_25_candidate.png",
+        "selected_source_sha256": "0ffd8dea8f35051a0151ed41614b8bf34f95de723cf54ca2166f0b83fce7753a",
+        "final_image": "origin_image/slide_25.png",
+        "final_image_sha256": "0ffd8dea8f35051a0151ed41614b8bf34f95de723cf54ca2166f0b83fce7753a",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:12:40Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_26",
+      "number": 26,
+      "title": "AI 多模態視覺互動的應用",
+      "job": "prompts/slide_26.json",
+      "out": "origin_image/slide_26.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "c02e0d21-0049-42c1-8ce5-49793e2ebd99",
+        "agent_nickname": "Slide 26 Generator",
+        "prompt": "prompts/slide_26.json",
+        "prompt_sha256": "a3c0f57682bb3e3e9b2c75cc905c47e3719e8ef3450d0a077d3a5ca0b1dafd02",
+        "dispatched_at": "2026-07-05T04:11:35Z"
+      },
+      "result": {
+        "agent_id": "c02e0d21-0049-42c1-8ce5-49793e2ebd99",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_26_candidate.png",
+        "selected_source_sha256": "1f6d1f9bedf2087462c5d7b3d687db6969c329d44c9ebfb5d448caf7f4de8dcf",
+        "final_image": "origin_image/slide_26.png",
+        "final_image_sha256": "1f6d1f9bedf2087462c5d7b3d687db6969c329d44c9ebfb5d448caf7f4de8dcf",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:12:58Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_27",
+      "number": 27,
+      "title": "AI 搜尋與傳統搜尋的本質差異",
+      "job": "prompts/slide_27.json",
+      "out": "origin_image/slide_27.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_27.json",
+        "prompt_sha256": "6461d9e64c4cde833aae0c280af57e5a16ec0772f7e1fc3062aad3fc5723b605",
+        "dispatched_at": "2026-07-05T08:22:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_27_candidate.png",
+        "selected_source_sha256": "3929274445436b7c8bd7885a7af45d920fea37236f90e2bd27bc91dfb633b95b",
+        "final_image": "origin_image/slide_27.png",
+        "final_image_sha256": "3929274445436b7c8bd7885a7af45d920fea37236f90e2bd27bc91dfb633b95b",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:28Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_28",
+      "number": 28,
+      "title": "Arc Search、Perplexity 與 Felo Search",
+      "job": "prompts/slide_28.json",
+      "out": "origin_image/slide_28.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_28.json",
+        "prompt_sha256": "10ab5065af3582e4e5a137f382a480cc5816d4ce985717aea8629c5c190cb1fd",
+        "dispatched_at": "2026-07-05T08:22:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_28_candidate.png",
+        "selected_source_sha256": "aab1abb90c009fe46c577ea29aa48e00e5a351867b23d05c9c1f63edd0ecb2dd",
+        "final_image": "origin_image/slide_28.png",
+        "final_image_sha256": "aab1abb90c009fe46c577ea29aa48e00e5a351867b23d05c9c1f63edd0ecb2dd",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:28Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_29",
+      "number": 29,
+      "title": "什麼是深度研究 (Deep Research)？",
+      "job": "prompts/slide_29.json",
+      "out": "origin_image/slide_29.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "27f85092-73cb-4dca-97ec-f6946a6e28c7",
+        "agent_nickname": "Slide 29 Generator",
+        "prompt": "prompts/slide_29.json",
+        "prompt_sha256": "6026ffbb3e7a9e6504166112bffb07b76a33828e9bf7232ef503b4846ea30bd6",
+        "dispatched_at": "2026-07-05T04:12:44Z"
+      },
+      "result": {
+        "agent_id": "27f85092-73cb-4dca-97ec-f6946a6e28c7",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_29_candidate.png",
+        "selected_source_sha256": "fb7bca3cc8499f7c14bbd5c04ef0a7cb1dc4047e3d6e2f9190dc6841cbaaba0e",
+        "final_image": "origin_image/slide_29.png",
+        "final_image_sha256": "fb7bca3cc8499f7c14bbd5c04ef0a7cb1dc4047e3d6e2f9190dc6841cbaaba0e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Text readable; style matches the approved sample.",
+        "recorded_at": "2026-07-05T04:14:07Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_30",
+      "number": 30,
+      "title": "四大平台 Deep Research 成果特色",
+      "job": "prompts/slide_30.json",
+      "out": "origin_image/slide_30.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_30.json",
+        "prompt_sha256": "c3c2103a64f0a19cb0e364fc7865a4ed0f5ff4fd039fdb2ebafe5ce1607e1764",
+        "dispatched_at": "2026-07-05T08:22:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_30_candidate.png",
+        "selected_source_sha256": "1d4d9c07e9f48f8813ecf641efe784372bb725348617190556a106e01d8d6e66",
+        "final_image": "origin_image/slide_30.png",
+        "final_image_sha256": "1d4d9c07e9f48f8813ecf641efe784372bb725348617190556a106e01d8d6e66",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:28Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_31",
+      "number": 31,
+      "title": "提示詞卡片：深度研究模式",
+      "job": "prompts/slide_31.json",
+      "out": "origin_image/slide_31.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_31.json",
+        "prompt_sha256": "cdbc5b511cc9106742cd8620d6f483723ac4895911d36800028f01509965a6fd",
+        "dispatched_at": "2026-07-05T08:22:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_31_candidate.png",
+        "selected_source_sha256": "7fdb94c62276f61f5ae4b0d44008715ce7d5db0a61c5fd9f99635e231de5bbaf",
+        "final_image": "origin_image/slide_31.png",
+        "final_image_sha256": "7fdb94c62276f61f5ae4b0d44008715ce7d5db0a61c5fd9f99635e231de5bbaf",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:28Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_32",
+      "number": 32,
+      "title": "世界旅遊基準測試 (WorldTravel Benchmark)",
+      "job": "prompts/slide_32.json",
+      "out": "origin_image/slide_32.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_32.json",
+        "prompt_sha256": "5ca26865e4750cf74754b068b962e685343de8d9675189c684f65de027992c6a",
+        "dispatched_at": "2026-07-05T08:22:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_32_candidate.png",
+        "selected_source_sha256": "ad5866b6827082633cd2fdb17f1f686e9512970ac5aba7a515860dee78a47456",
+        "final_image": "origin_image/slide_32.png",
+        "final_image_sha256": "ad5866b6827082633cd2fdb17f1f686e9512970ac5aba7a515860dee78a47456",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:29Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_33",
+      "number": 33,
+      "title": "行程大綱視覺化與動態決策",
+      "job": "prompts/slide_33.json",
+      "out": "origin_image/slide_33.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_33.json",
+        "prompt_sha256": "2e7a6fac527db4d99099a7ee110ec63e325064f0e2e6c108c8653501d03f16d5",
+        "dispatched_at": "2026-07-05T08:22:29Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_33_candidate.png",
+        "selected_source_sha256": "a9fd93d8897440a01be39d6ee08174a6aab6e695894c1ab64a80b0d538f6c7cb",
+        "final_image": "origin_image/slide_33.png",
+        "final_image_sha256": "a9fd93d8897440a01be39d6ee08174a6aab6e695894c1ab64a80b0d538f6c7cb",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:29Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_34",
+      "number": 34,
+      "title": "提示詞卡片：輸出 Markdown 匯入心智圖",
+      "job": "prompts/slide_34.json",
+      "out": "origin_image/slide_34.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_34.json",
+        "prompt_sha256": "dd954ed91cb89f66f6aa24d86487f70cc4ca85feb085ed7a8592ffdd1d7643f3",
+        "dispatched_at": "2026-07-05T08:22:29Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_34_candidate.png",
+        "selected_source_sha256": "16d035cf288c821511f8a7c10b2d3c03ace44da9fe572898e2a1750484c7dd22",
+        "final_image": "origin_image/slide_34.png",
+        "final_image_sha256": "16d035cf288c821511f8a7c10b2d3c03ace44da9fe572898e2a1750484c7dd22",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:29Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_35",
+      "number": 35,
+      "title": "將旅行行程畫成一張圖",
+      "job": "prompts/slide_35.json",
+      "out": "origin_image/slide_35.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_35.json",
+        "prompt_sha256": "0b3b63b8fa96173069b989bd3ee48eb2de1b6610234a70c3183065f0c08fc48b",
+        "dispatched_at": "2026-07-05T08:22:29Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_35_candidate.png",
+        "selected_source_sha256": "cecc2124497428728f8590656b9abc826ce62c6680affdc6e7af42ae2fa27083",
+        "final_image": "origin_image/slide_35.png",
+        "final_image_sha256": "cecc2124497428728f8590656b9abc826ce62c6680affdc6e7af42ae2fa27083",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:22:29Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_36",
+      "number": 36,
+      "title": "Nano Banana Pro 與 GPT Image (Images 2.0)",
+      "job": "prompts/slide_36.json",
+      "out": "origin_image/slide_36.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_36.json",
+        "prompt_sha256": "278572ff6dd1d6e56d6360a57c340ea943d58326ffaed91c742b25369c92c49a",
+        "dispatched_at": "2026-07-05T08:22:37Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_36_candidate.png",
+        "selected_source_sha256": "62c760a74b96638311be229f90c8ca0e9a45fe04372df8bf1e44fa1148d18944",
+        "final_image": "origin_image/slide_36.png",
+        "final_image_sha256": "62c760a74b96638311be229f90c8ca0e9a45fe04372df8bf1e44fa1148d18944",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:23:38Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_37",
+      "number": 37,
+      "title": "提示詞卡片：一頁式旅行海報",
+      "job": "prompts/slide_37.json",
+      "out": "origin_image/slide_37.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_37.json",
+        "prompt_sha256": "133b96114ffc44e26a978f272d4d43ae38bb9bea1f55f866b696b0d22efb515f",
+        "dispatched_at": "2026-07-05T08:23:43Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_37_candidate.png",
+        "selected_source_sha256": "7799f5836ce2d013e5aee456349d568e0570e497491cf3858550d36297f9102b",
+        "final_image": "origin_image/slide_37.png",
+        "final_image_sha256": "7799f5836ce2d013e5aee456349d568e0570e497491cf3858550d36297f9102b",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:24:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_38",
+      "number": 38,
+      "title": "NotebookLM：打造「只屬於我」的旅遊指南",
+      "job": "prompts/slide_38.json",
+      "out": "origin_image/slide_38.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_38.json",
+        "prompt_sha256": "54122f3c19176dbfa5fbc72e34b749c41dab616ee499537e391e336b10757ecd",
+        "dispatched_at": "2026-07-05T08:24:53Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_38_candidate.png",
+        "selected_source_sha256": "0f3134f9e78ae32ee72dbf40414ad2afb771778efc972926478c6d6bf055be79",
+        "final_image": "origin_image/slide_38.png",
+        "final_image_sha256": "0f3134f9e78ae32ee72dbf40414ad2afb771778efc972926478c6d6bf055be79",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:25:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_39",
+      "number": 39,
+      "title": "提示詞卡片：NotebookLM 專屬旅遊指南",
+      "job": "prompts/slide_39.json",
+      "out": "origin_image/slide_39.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_39.json",
+        "prompt_sha256": "7b469c0b5394ea7a05a0410071a389ab883379019a33c3918d3d37d9059bc39c",
+        "dispatched_at": "2026-07-05T08:25:55Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_39_candidate.png",
+        "selected_source_sha256": "9988f692be6b582d0ef10952bf785e687688b17799a98720a43be0823b437265",
+        "final_image": "origin_image/slide_39.png",
+        "final_image_sha256": "9988f692be6b582d0ef10952bf785e687688b17799a98720a43be0823b437265",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:26:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_40",
+      "number": 40,
+      "title": "養一個隨傳隨到的專屬旅遊顧問",
+      "job": "prompts/slide_40.json",
+      "out": "origin_image/slide_40.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_40.json",
+        "prompt_sha256": "1afbcc50b849aca90c135526408b384d36c05a9d14301ef834ef375fa8c10701",
+        "dispatched_at": "2026-07-05T08:26:51Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_40_candidate.png",
+        "selected_source_sha256": "2c02c64b733aca6be3e67d8c5c2ae590a9ba62ebd232bf482ee184facbaf8f31",
+        "final_image": "origin_image/slide_40.png",
+        "final_image_sha256": "2c02c64b733aca6be3e67d8c5c2ae590a9ba62ebd232bf482ee184facbaf8f31",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:27:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_41",
+      "number": 41,
+      "title": "提示詞卡片：自訂 GPTs/Gems 系統指令",
+      "job": "prompts/slide_41.json",
+      "out": "origin_image/slide_41.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_41.json",
+        "prompt_sha256": "16ef0edf20772278610575bd6b26701e537be479b61476fab64eb0c200572d27",
+        "dispatched_at": "2026-07-05T08:27:53Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_41_candidate.png",
+        "selected_source_sha256": "4ab418db5ce6dd8640eaa6185de0b915d8cab9cb525b8fb2957bb1c73fe8dcb6",
+        "final_image": "origin_image/slide_41.png",
+        "final_image_sha256": "4ab418db5ce6dd8640eaa6185de0b915d8cab9cb525b8fb2957bb1c73fe8dcb6",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:28:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_42",
+      "number": 42,
+      "title": "AI Agent 專章：從「會回答」到「會執行」的旅行代理",
+      "job": "prompts/slide_42.json",
+      "out": "origin_image/slide_42.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_42.json",
+        "prompt_sha256": "d6f930bf8ee53fce102a49cf089c477ca4442b0962c719942b4cc42afbc50086",
+        "dispatched_at": "2026-07-05T08:28:51Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_42_candidate.png",
+        "selected_source_sha256": "309436e9f1d2f7efe525cfdf6e3d1d6861446b9964929e891c7d422815cdb53d",
+        "final_image": "origin_image/slide_42.png",
+        "final_image_sha256": "309436e9f1d2f7efe525cfdf6e3d1d6861446b9964929e891c7d422815cdb53d",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:29:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_43",
+      "number": 43,
+      "title": "AI 發展的四個層級",
+      "job": "prompts/slide_43.json",
+      "out": "origin_image/slide_43.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_43.json",
+        "prompt_sha256": "fa46f6224d6cee287fdff3cbbf23182f94550b5cb7255167092bb242676bc550",
+        "dispatched_at": "2026-07-05T08:29:51Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_43_candidate.png",
+        "selected_source_sha256": "21ed24d5791e5b8165221d8376eb4b301b6ed33d6273d6f54a7b9ef39e6a9aba",
+        "final_image": "origin_image/slide_43.png",
+        "final_image_sha256": "21ed24d5791e5b8165221d8376eb4b301b6ed33d6273d6f54a7b9ef39e6a9aba",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:30:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_44",
+      "number": 44,
+      "title": "旅行 Agent 的 7 大工作步驟",
+      "job": "prompts/slide_44.json",
+      "out": "origin_image/slide_44.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_44.json",
+        "prompt_sha256": "926f9c477eff440f6b3cab044e4f12a181778c18f58a1863b1e13753c1ed3c13",
+        "dispatched_at": "2026-07-05T08:30:51Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_44_candidate.png",
+        "selected_source_sha256": "b4864a818c139951933dd7664918670292cfc63b3f0da5ff2c1a8a415fb11dd3",
+        "final_image": "origin_image/slide_44.png",
+        "final_image_sha256": "b4864a818c139951933dd7664918670292cfc63b3f0da5ff2c1a8a415fb11dd3",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:31:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_45",
+      "number": 45,
+      "title": "旅行規劃交給 Agent 的五大原因",
+      "job": "prompts/slide_45.json",
+      "out": "origin_image/slide_45.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_45.json",
+        "prompt_sha256": "5bb640c8dd0d25b1a83300492ff4a2168017accca8180bd8f8e86e45042e2656",
+        "dispatched_at": "2026-07-05T08:31:53Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_45_candidate.png",
+        "selected_source_sha256": "dada8a03ba48084dcaf6d6136edd28d67a89a8a908c3b8d29138e360ffeced50",
+        "final_image": "origin_image/slide_45.png",
+        "final_image_sha256": "dada8a03ba48084dcaf6d6136edd28d67a89a8a908c3b8d29138e360ffeced50",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:32:45Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_46",
+      "number": 46,
+      "title": "兩大 AI 代理平台定位對照",
+      "job": "prompts/slide_46.json",
+      "out": "origin_image/slide_46.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_46.json",
+        "prompt_sha256": "44bb203e8492f715881536879770d02e2f38c2ff06e1ac2929dd41117684e4bc",
+        "dispatched_at": "2026-07-05T08:32:50Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_46_candidate.png",
+        "selected_source_sha256": "c700d2502eb122040a45e512aae1499554aaa41e0b38eacb490d066a6e4e31a2",
+        "final_image": "origin_image/slide_46.png",
+        "final_image_sha256": "c700d2502eb122040a45e512aae1499554aaa41e0b38eacb490d066a6e4e31a2",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:34:09Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_47",
+      "number": 47,
+      "title": "旅行 Agent 的十二個專業代理分工",
+      "job": "prompts/slide_47.json",
+      "out": "origin_image/slide_47.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_47.json",
+        "prompt_sha256": "26b5b49c18ad80457f3d7c3d5c698a791226e042cbfe71d9770e2617cf8d7314",
+        "dispatched_at": "2026-07-05T08:34:14Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_47_candidate.png",
+        "selected_source_sha256": "35d6d0a81763ff4bfd00071a4c7c1146900481f4d9dad1b64159ec62bbed49eb",
+        "final_image": "origin_image/slide_47.png",
+        "final_image_sha256": "35d6d0a81763ff4bfd00071a4c7c1146900481f4d9dad1b64159ec62bbed49eb",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:35:07Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_48",
+      "number": 48,
+      "title": "「主管 + 專業代理 + 獨立反查」多代理協作",
+      "job": "prompts/slide_48.json",
+      "out": "origin_image/slide_48.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_48.json",
+        "prompt_sha256": "1915c8a6604f1ffcaf29949d2b62258b45ea7808ca0d313dd09dd9e7763e8e6f",
+        "dispatched_at": "2026-07-05T08:35:13Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_48_candidate.png",
+        "selected_source_sha256": "e2f32610527abcb76d3cc32c50fbc5554e081ed96338ec974d89840450c82ef7",
+        "final_image": "origin_image/slide_48.png",
+        "final_image_sha256": "e2f32610527abcb76d3cc32c50fbc5554e081ed96338ec974d89840450c82ef7",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:36:06Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_49",
+      "number": 49,
+      "title": "旅途中的 Agent 即時協助場景",
+      "job": "prompts/slide_49.json",
+      "out": "origin_image/slide_49.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_49.json",
+        "prompt_sha256": "ac5177354579f6f0185802266ffd2ab62be3cd2af22cae819c2994061b99ab06",
+        "dispatched_at": "2026-07-05T08:36:11Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_49_candidate.png",
+        "selected_source_sha256": "b4263efe31efdcbea4b5d014f5d3fa3360978f5e14f0a8000d48b11d651dfc22",
+        "final_image": "origin_image/slide_49.png",
+        "final_image_sha256": "b4263efe31efdcbea4b5d014f5d3fa3360978f5e14f0a8000d48b11d651dfc22",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:37:06Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_50",
+      "number": 50,
+      "title": "旅行後的 Agent 整理與歸檔",
+      "job": "prompts/slide_50.json",
+      "out": "origin_image/slide_50.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_50.json",
+        "prompt_sha256": "c6229633b7dfece0116b22f7ed4bbc32a092599694891363ed67aba8c8333f14",
+        "dispatched_at": "2026-07-05T08:37:11Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_50_candidate.png",
+        "selected_source_sha256": "7a83598c1ddc44f7d5c1059531ced48e42fb9458ab3bef519b4203001116b8e2",
+        "final_image": "origin_image/slide_50.png",
+        "final_image_sha256": "7a83598c1ddc44f7d5c1059531ced48e42fb9458ab3bef519b4203001116b8e2",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:37:55Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_51",
+      "number": 51,
+      "title": "導入自動化旅行規劃的五個層級",
+      "job": "prompts/slide_51.json",
+      "out": "origin_image/slide_51.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_51.json",
+        "prompt_sha256": "5093670888eef5456af6b790b60f6fed462cd7af4079415cc8d4c068b6a2ab2f",
+        "dispatched_at": "2026-07-05T08:38:00Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_51_candidate.png",
+        "selected_source_sha256": "067c48e4c3b09b1f3c3f009453699e033b54dc75b74362bf30e664d45cff57e5",
+        "final_image": "origin_image/slide_51.png",
+        "final_image_sha256": "067c48e4c3b09b1f3c3f009453699e033b54dc75b74362bf30e664d45cff57e5",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:39:30Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_52",
+      "number": 52,
+      "title": "提示詞卡片：母提示詞（完整旅行專案代理）",
+      "job": "prompts/slide_52.json",
+      "out": "origin_image/slide_52.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_52.json",
+        "prompt_sha256": "a482fec0ad03ae84e642ed77e2d4cd063af33d45d21b9463db9775d40049d9f3",
+        "dispatched_at": "2026-07-05T08:39:35Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_52_candidate.png",
+        "selected_source_sha256": "3171f555fbbd6e1368f476a601154729bedf08f36a30ea4122cedf68dfc478ba",
+        "final_image": "origin_image/slide_52.png",
+        "final_image_sha256": "3171f555fbbd6e1368f476a601154729bedf08f36a30ea4122cedf68dfc478ba",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:40:22Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_53",
+      "number": 53,
+      "title": "工具箱 A-D：需求分析、航班研究、住宿選址、景點資料",
+      "job": "prompts/slide_53.json",
+      "out": "origin_image/slide_53.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_53.json",
+        "prompt_sha256": "a7768ee83b4e78cee8dfadd3c8d76034cdb18c546ca5728742cc8e2eab1a0f88",
+        "dispatched_at": "2026-07-05T08:40:28Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_53_candidate.png",
+        "selected_source_sha256": "29060de4a0d19cfe873ad45888333204ad6b28bf40eb11209123c000a6c0f50d",
+        "final_image": "origin_image/slide_53.png",
+        "final_image_sha256": "29060de4a0d19cfe873ad45888333204ad6b28bf40eb11209123c000a6c0f50d",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:41:14Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_54",
+      "number": 54,
+      "title": "工具箱 E-H：行程最佳化、票券損益、預約期限、行李打包",
+      "job": "prompts/slide_54.json",
+      "out": "origin_image/slide_54.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_54.json",
+        "prompt_sha256": "9bad6241834299b0d743333da7966770acc890e13a0b7a3fec7317132d6ca06a",
+        "dispatched_at": "2026-07-05T08:41:19Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_54_candidate.png",
+        "selected_source_sha256": "7607943393b1e9bec0bde69058edf9bc27776060602fba1c5c65a7fe6e83f34f",
+        "final_image": "origin_image/slide_54.png",
+        "final_image_sha256": "7607943393b1e9bec0bde69058edf9bc27776060602fba1c5c65a7fe6e83f34f",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:42:15Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_55",
+      "number": 55,
+      "title": "工具箱 I-L：晨間簡報、中斷重排、記帳分帳、經驗歸檔",
+      "job": "prompts/slide_55.json",
+      "out": "origin_image/slide_55.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_55.json",
+        "prompt_sha256": "7052ef0d5ec85087d01403152de7a1572ff8b089302c0ca052e8b3eceed63878",
+        "dispatched_at": "2026-07-05T08:42:20Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_55_candidate.png",
+        "selected_source_sha256": "bb20954651e586e64a1670ba5c1d029667dc7e7ce74fe483b221d4b4778cc5aa",
+        "final_image": "origin_image/slide_55.png",
+        "final_image_sha256": "bb20954651e586e64a1670ba5c1d029667dc7e7ce74fe483b221d4b4778cc5aa",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:43:12Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_56",
+      "number": 56,
+      "title": "工具箱 M-N：獨立稽核與 Antigravity 開發",
+      "job": "prompts/slide_56.json",
+      "out": "origin_image/slide_56.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_56.json",
+        "prompt_sha256": "df3909f7142ae561bac5fc3aa1c0b3f19f5b1d8faa6f758a7f2448ee6c0a65c4",
+        "dispatched_at": "2026-07-05T08:43:17Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_56_candidate.png",
+        "selected_source_sha256": "ec802de0b65bbd77347f6a33f007efbf309f05666aab966102724a740f6abffd",
+        "final_image": "origin_image/slide_56.png",
+        "final_image_sha256": "ec802de0b65bbd77347f6a33f007efbf309f05666aab966102724a740f6abffd",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:44:11Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_57",
+      "number": 57,
+      "title": "旅行代理的安全防護網與隱私邊界",
+      "job": "prompts/slide_57.json",
+      "out": "origin_image/slide_57.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_57.json",
+        "prompt_sha256": "2d7358ccb1e3108f74fff31da5055abaf589d4c2335579dcd8be8b7984e57d75",
+        "dispatched_at": "2026-07-05T08:44:16Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_57_candidate.png",
+        "selected_source_sha256": "dcb7c2d94b4c5a1b54265cac6b0fa847fa44166d91d61c1dd5dca219f45842f8",
+        "final_image": "origin_image/slide_57.png",
+        "final_image_sha256": "dcb7c2d94b4c5a1b54265cac6b0fa847fa44166d91d61c1dd5dca219f45842f8",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:45:02Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_58",
+      "number": 58,
+      "title": "跨越語言障礙的三大 AI 翻譯利器",
+      "job": "prompts/slide_58.json",
+      "out": "origin_image/slide_58.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_58.json",
+        "prompt_sha256": "45e6aecd9c7584b72b52777b22b7f6091ce1d5168e1763e84a5b039feb842dde",
+        "dispatched_at": "2026-07-05T08:45:08Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_58_candidate.png",
+        "selected_source_sha256": "4f2df38bed96c5ae992f49a58b67db58e8f157d16d3aec3cf8777dc0840937b5",
+        "final_image": "origin_image/slide_58.png",
+        "final_image_sha256": "4f2df38bed96c5ae992f49a58b67db58e8f157d16d3aec3cf8777dc0840937b5",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:45:57Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_59",
+      "number": 59,
+      "title": "林獻升老師自製的多功能即時翻譯網頁",
+      "job": "prompts/slide_59.json",
+      "out": "origin_image/slide_59.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_59.json",
+        "prompt_sha256": "7ac91fa0fe28d36fb6ebc7a16b293f7bbe66066adca5e48b77f79762f8d9582c",
+        "dispatched_at": "2026-07-05T08:46:02Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_59_candidate.png",
+        "selected_source_sha256": "cef0af77c387ef3b0c1712b5448dfbd6e2db8648ba80254f9d5ffae0e71ab18e",
+        "final_image": "origin_image/slide_59.png",
+        "final_image_sha256": "cef0af77c387ef3b0c1712b5448dfbd6e2db8648ba80254f9d5ffae0e71ab18e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:46:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_60",
+      "number": 60,
+      "title": "行程收斂與落地：行程及地圖 App",
+      "job": "prompts/slide_60.json",
+      "out": "origin_image/slide_60.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_60.json",
+        "prompt_sha256": "49040f0d52e423d59ae603823eeda6cd8544ac61b2796ca809958322ced32aca",
+        "dispatched_at": "2026-07-05T08:46:53Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_60_candidate.png",
+        "selected_source_sha256": "8339320d4fb3e2ca60f976ddd80af8c9c710847aee505c424b269b94e69a3a6c",
+        "final_image": "origin_image/slide_60.png",
+        "final_image_sha256": "8339320d4fb3e2ca60f976ddd80af8c9c710847aee505c424b269b94e69a3a6c",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:47:43Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_61",
+      "number": 61,
+      "title": "乘換案內、Windy 與 Tabelog",
+      "job": "prompts/slide_61.json",
+      "out": "origin_image/slide_61.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_61.json",
+        "prompt_sha256": "f4a3c594a0c4e81cfa150f1111ae45b0a5970cd7e42aa27b79d076af3cf3f4c5",
+        "dispatched_at": "2026-07-05T08:47:48Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_61_candidate.png",
+        "selected_source_sha256": "04f733ab03253371e7c104239942f0b7ee62864f6fac3d85db1bef1dd0c3917e",
+        "final_image": "origin_image/slide_61.png",
+        "final_image_sha256": "04f733ab03253371e7c104239942f0b7ee62864f6fac3d85db1bef1dd0c3917e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:48:38Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_62",
+      "number": 62,
+      "title": "極簡匯率、Visit Japan Web 與 Suica",
+      "job": "prompts/slide_62.json",
+      "out": "origin_image/slide_62.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_62.json",
+        "prompt_sha256": "fe3dfd1bcb8c37609d441866410a42e8c2b32db710110757ed6aeb858eb13458",
+        "dispatched_at": "2026-07-05T08:48:44Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_62_candidate.png",
+        "selected_source_sha256": "df27ca36b4be7f43ef4eaf16bbdb0868d2d307c69de051f01b0e7d304cb8b81a",
+        "final_image": "origin_image/slide_62.png",
+        "final_image_sha256": "df27ca36b4be7f43ef4eaf16bbdb0868d2d307c69de051f01b0e7d304cb8b81a",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:49:35Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_63",
+      "number": 63,
+      "title": "什麼是 Vibe Coding？人人都是程式設計師",
+      "job": "prompts/slide_63.json",
+      "out": "origin_image/slide_63.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_63.json",
+        "prompt_sha256": "5b0cdf04671b6c0518db9d350a85c2455b99fabe5057ca18995bf031546c7732",
+        "dispatched_at": "2026-07-05T08:49:40Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_63_candidate.png",
+        "selected_source_sha256": "68cff3bdfd4857e80cf2f4feb6367fc87071e28262ee137c484df63b935e9cdf",
+        "final_image": "origin_image/slide_63.png",
+        "final_image_sha256": "68cff3bdfd4857e80cf2f4feb6367fc87071e28262ee137c484df63b935e9cdf",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:50:55Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_64",
+      "number": 64,
+      "title": "程式實作 1：單檔 HTML 即時翻譯小工具",
+      "job": "prompts/slide_64.json",
+      "out": "origin_image/slide_64.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_64.json",
+        "prompt_sha256": "b99f84eb18c48cfd3394036cec6e8e6d7ef084bef9583e40f69821ca9f317a8d",
+        "dispatched_at": "2026-07-05T08:51:00Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_64_candidate.png",
+        "selected_source_sha256": "e3e089ddf5183f50328975d523eb068eee1837a77fe2b5e56c91f9bc34cf5713",
+        "final_image": "origin_image/slide_64.png",
+        "final_image_sha256": "e3e089ddf5183f50328975d523eb068eee1837a77fe2b5e56c91f9bc34cf5713",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:51:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_65",
+      "number": 65,
+      "title": "程式實作 2：貨幣轉換與旅行記帳程式",
+      "job": "prompts/slide_65.json",
+      "out": "origin_image/slide_65.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_65.json",
+        "prompt_sha256": "e005d64dc886363e78b864f40f9cf61fc38216baf3a03f916cfbe44c8413cb5b",
+        "dispatched_at": "2026-07-05T08:51:53Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_65_candidate.png",
+        "selected_source_sha256": "5a02e1db1aae15bd8ae7a1a513573b050527a5ec76eb03095eb2b6aeb9c1079a",
+        "final_image": "origin_image/slide_65.png",
+        "final_image_sha256": "5a02e1db1aae15bd8ae7a1a513573b050527a5ec76eb03095eb2b6aeb9c1079a",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:53:10Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_66",
+      "number": 66,
+      "title": "程式實作 3 & 4：互動行程表與隨機抽籤",
+      "job": "prompts/slide_66.json",
+      "out": "origin_image/slide_66.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_66.json",
+        "prompt_sha256": "510d098779041e17cdddfe52e6ca17a75ec70868dfaab94531e6c5ddf3049a04",
+        "dispatched_at": "2026-07-05T08:53:15Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_66_candidate.png",
+        "selected_source_sha256": "f6bf7ab135b496ce038f300da98a749624469eae14385800fab9c91daae99e05",
+        "final_image": "origin_image/slide_66.png",
+        "final_image_sha256": "f6bf7ab135b496ce038f300da98a749624469eae14385800fab9c91daae99e05",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:54:04Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_67",
+      "number": 67,
+      "title": "實戰示範：東京十日夏季行程一條龍工作流",
+      "job": "prompts/slide_67.json",
+      "out": "origin_image/slide_67.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_67.json",
+        "prompt_sha256": "e074f1714c4f427da15dc62f8f1244799582cedc8ebcea9650f30b847cea9f6f",
+        "dispatched_at": "2026-07-05T08:54:09Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_67_candidate.png",
+        "selected_source_sha256": "12fce0855ad5241470ef45f06308e1ed230bbe36360cbbdcf0afe405bbaa5430",
+        "final_image": "origin_image/slide_67.png",
+        "final_image_sha256": "12fce0855ad5241470ef45f06308e1ed230bbe36360cbbdcf0afe405bbaa5430",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:55:00Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_68",
+      "number": 68,
+      "title": "結語：林獻升老師的幾句叮嚀",
+      "job": "prompts/slide_68.json",
+      "out": "origin_image/slide_68.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_68.json",
+        "prompt_sha256": "01b59537b45f0a8f040dc115ec5fd77b29e84ab9ef800b419de75e453bb90f0e",
+        "dispatched_at": "2026-07-05T08:55:05Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_68_candidate.png",
+        "selected_source_sha256": "f3a408b92fec4282a7e4c1cdd170c0bd94848524c9a9110bba7cf75b042d4fbd",
+        "final_image": "origin_image/slide_68.png",
+        "final_image_sha256": "f3a408b92fec4282a7e4c1cdd170c0bd94848524c9a9110bba7cf75b042d4fbd",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:55:50Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_69",
+      "number": 69,
+      "title": "附錄：AI 輔助自助旅行工具速查表",
+      "job": "prompts/slide_69.json",
+      "out": "origin_image/slide_69.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_69.json",
+        "prompt_sha256": "e373bca31f0e63d58ebd5dbe7b18521a662d9aef6e0579b04cb3239080c302d7",
+        "dispatched_at": "2026-07-05T08:55:55Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_69_candidate.png",
+        "selected_source_sha256": "7946c36c5b6a39381b101da18ea6b29795864c36a46eb99cf70cf3b601a86b0c",
+        "final_image": "origin_image/slide_69.png",
+        "final_image_sha256": "7946c36c5b6a39381b101da18ea6b29795864c36a46eb99cf70cf3b601a86b0c",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:57:03Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_70",
+      "number": 70,
+      "title": "附錄：林獻升老師的生物與旅行詩作",
+      "job": "prompts/slide_70.json",
+      "out": "origin_image/slide_70.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "local_master",
+        "agent_nickname": "Local Master Generator",
+        "prompt": "prompts/slide_70.json",
+        "prompt_sha256": "506db5180c7aeb86a60a32754814810210453dbbc24260dcc8ae28bd09fde681",
+        "dispatched_at": "2026-07-05T08:57:08Z"
+      },
+      "result": {
+        "agent_id": "local_master",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/drafts/slide_70_candidate.png",
+        "selected_source_sha256": "ad478dddde453c0b42231ddc6bebd7c57222cc08efdaeb23b94d66fb57641bd4",
+        "final_image": "origin_image/slide_70.png",
+        "final_image_sha256": "ad478dddde453c0b42231ddc6bebd7c57222cc08efdaeb23b94d66fb57641bd4",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Generated locally via generate_deck.py",
+        "recorded_at": "2026-07-05T08:58:05Z"
+      },
+      "blocker": null
+    }
+  ],
+  "updated_at": "2026-07-05T08:58:05Z"
+}

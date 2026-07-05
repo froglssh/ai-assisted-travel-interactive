@@ -1,0 +1,51 @@
+{
+  "slide": 61,
+  "title": "乘換案內、Windy 與 Tabelog",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Chinese\",\n  \"slide_number\": 61,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n提供最完整、系統化的 AI 輔助自助旅行規劃與實作研習簡報\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"整合 6 份深度研究報告與 115 學年度整合版互動網頁講義，涵蓋六個旅行環節、提問技術、AI Agent 能力與安全性、AI 翻譯、傳統 App 工具箱以及網頁小工具程式實作。\",\n    \"core_claim\": \"讓 AI 負責發散（創意/大綱/翻譯），傳統 App 負責收斂（交通/即時查證），人類負責最終驗證與決策。\",\n    \"canonical_terms\": [\n      \"生成式 LLM\",\n      \"代理型 AI\",\n      \"Agentic AI\",\n      \"發散與收斂\",\n      \"R-C-F-O-T 框架\",\n      \"NotebookLM\",\n      \"Antigravity\",\n      \"Computer Use\"\n    ]\n  }\n}\n\n## Global Style\n{\n  \"name\": \"暖系人文專業風\",\n  \"visual_direction\": \"warm, elegant, minimalist humanist technical presentation style\",\n  \"color_palette\": \"cream background (#FBF6EC), accent colors are amber orange and sage green, text is dark ink brown\",\n  \"typography\": \"large and clear Traditional Chinese headings, clean sans-serif font family, structured bullet points\"\n}\n\n## Style Reference Images To Inspect\n\n- Style Reference 1: /Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png — approved sample slide style reference; match style only; do not copy layout or content\n\nInspect these images before generation to understand the approved deck style. Do not pass them to the image backend as input images unless this slide explicitly lists them under Input Images.\n\n## Slide\n{\n  \"number\": 61,\n  \"title\": \"乘換案內、Windy 與 Tabelog\",\n  \"role\": \"comparison\",\n  \"intent\": \"Explain the concepts related to 乘換案內、Windy 與 Tabelog\"\n}\n\n## Text\n{\n  \"title\": \"乘換案內、Windy 與 Tabelog\",\n  \"key_points\": [\n    \"乗換案内 NAVITIME / JapanTravel：查日本地鐵、新幹線班次、月台、轉乘時間最精準\",\n    \"Windy / tenki.jp：提供高度精準的降雨雷達與颱風路徑，適時決定是否啟動雨備\",\n    \"Tabelog / GURUNAVI：日本在地美食評分系統，用以驗證 AI 推薦 of 餐廳是否過譽\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"composition\": \"title at top left, main points in cards or list, minimalist travel vector art decoration\",\n  \"relationship_to_previous_slide\": \"sequential story flow\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"minimalist icon/metaphor illustrating 乘換案內、Windy 與 Tabelog\"\n}\n\n## Constraints\n[\n  \"Use the approved warm humanist design style with cream background (#FBF6EC), amber orange, and sage green accents.\",\n  \"Render clean and legible Traditional Chinese text exactly, no spelling errors.\",\n  \"No slide numbers, no unrelated watermarks or logos.\",\n  \"Maintain professional layout with clear visual hierarchy.\"\n]\n\n## Style Reference Rule\nUse the approved sample-slide style reference as visual guidance only. Match its palette, typography mood, density, texture, and overall visual identity. Do not copy its exact layout unless this slide's layout explicitly asks for it. For normal new slide generation, use the generate endpoint and express the inspected style through the prompt instead of attaching the sample as an edit input.\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_61.png",
+  "candidate_out": "drafts/slide_61_candidate.png",
+  "input_images": [],
+  "style_reference_images": [
+    {
+      "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+      "role": "approved sample slide style reference",
+      "fidelity": "match style only; do not copy layout or content"
+    }
+  ],
+  "requires_context_images": false,
+  "expected_generation_mode": "generate",
+  "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "the approved sample slide job prompt",
+    "size": "16:9 landscape, 2048x1152 target",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助自助旅行/ai_assisted_travel_deck/origin_image/slide_16.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "default_mode": "generate",
+    "use_edit_only_when": [
+      "input_images is non-empty",
+      "repairing an existing generated slide"
+    ],
+    "must_inspect_style_reference_images": true,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}
